@@ -16,11 +16,11 @@ const state = {
 };
 
 const stages = [
-  { start: 0.07, end: 0.24, label: '01 · ASK', status: 'ask received' },
-  { start: 0.24, end: 0.41, label: '02 · GO PRIVATE', status: 'private task' },
-  { start: 0.41, end: 0.58, label: '03 · ROUTE TO YOU', status: 'owner verified' },
-  { start: 0.58, end: 0.76, label: '04 · RUN THERE', status: 'agent running' },
-  { start: 0.76, end: 1, label: '05 · REVIEW + SHARE', status: 'private draft' },
+  { start: 0.07, end: 0.24, label: 'Ask in Slack', status: 'message received' },
+  { start: 0.24, end: 0.41, label: 'Private DM', status: 'moved to private DM' },
+  { start: 0.41, end: 0.58, label: 'Find your agent', status: 'Alice matched' },
+  { start: 0.58, end: 0.76, label: 'Work on your machine', status: 'agent working' },
+  { start: 0.76, end: 1, label: 'Review before sharing', status: 'answer ready' },
 ];
 
 const clamp = (value, min = 0, max = 1) => Math.min(max, Math.max(min, value));
@@ -66,10 +66,7 @@ const setStageText = (stage) => {
 
   const current = stages[stage];
   document.querySelector('.progress-label').textContent = current.label;
-  document.querySelector('.status-index').textContent = String(stage + 1).padStart(2, '0');
   document.querySelector('.status-copy').textContent = current.status;
-  document.querySelector('.status-seq').textContent =
-    stage === 0 ? 'seq 0001' : `seq ${String(stage * 18 + 1).padStart(4, '0')}`;
 };
 
 const packetPosition = (progress) => {
@@ -108,7 +105,6 @@ const apply = (progress) => {
   setVariable('--hero-y', `${(-heroOut * 28).toFixed(2)}px`);
   setVariable('--steps-o', smooth(progress, 0.055, 0.095).toFixed(4));
   setVariable('--rail-o', smooth(progress, 0.035, 0.095).toFixed(4));
-  setVariable('--cue-o', (1 - smooth(progress, 0.018, 0.075)).toFixed(4));
 
   stages.forEach((stage, index) => {
     const opacity = bandOpacity(progress, stage.start, stage.end);
@@ -121,8 +117,8 @@ const apply = (progress) => {
     setVariable(`--rf${index + 1}`, `${fill.toFixed(2)}%`);
   });
 
-  const draft = smooth(progress, 0.775, 0.9);
-  const privateThread = smooth(progress, 0.22, 0.32) * (1 - draft);
+  const draft = smooth(progress, 0.79, 0.86);
+  const privateThread = smooth(progress, 0.22, 0.32) * (1 - smooth(progress, 0.72, 0.78));
   const owner = smooth(progress, 0.4, 0.47);
   const bob = smooth(progress, 0.43, 0.49);
   const running = smooth(progress, 0.57, 0.68);
@@ -196,26 +192,6 @@ document.querySelectorAll('[data-jump]').forEach((button) => {
     const destination = state.storyTop + state.travel * ((stage.start + stage.end) / 2);
     window.scrollTo({ top: destination, behavior: calmMotion() ? 'auto' : 'smooth' });
   });
-});
-
-const copyButton = document.querySelector('[data-copy-command]');
-copyButton.addEventListener('click', async () => {
-  const command = document
-    .querySelector('.command-row code')
-    .textContent.replace(/\s+/g, ' ')
-    .trim();
-  const label = copyButton.querySelector('span');
-
-  try {
-    await navigator.clipboard.writeText(command);
-    label.textContent = 'Copied';
-  } catch {
-    label.textContent = 'Copy failed';
-  }
-
-  window.setTimeout(() => {
-    label.textContent = 'Copy';
-  }, 1600);
 });
 
 window.addEventListener('scroll', updateTarget, { passive: true });
