@@ -105,6 +105,7 @@ const apply = (progress) => {
   setVariable('--hero-y', `${(-heroOut * 28).toFixed(2)}px`);
   setVariable('--steps-o', smooth(progress, 0.055, 0.095).toFixed(4));
   setVariable('--rail-o', smooth(progress, 0.035, 0.095).toFixed(4));
+  setVariable('--cue-o', (1 - smooth(progress, 0.018, 0.075)).toFixed(4));
 
   stages.forEach((stage, index) => {
     const opacity = bandOpacity(progress, stage.start, stage.end);

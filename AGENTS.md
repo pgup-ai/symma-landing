@@ -62,8 +62,10 @@ explained clearly, not a generic AI landing-page template.
   borders.
 - Do not add competing cyan, green, amber, or pink accents. Status differences should use wording,
   icons, weight, or opacity before another hue.
-- Avoid decorative grids, glowing blobs, oversized gradients, random particles, glass cards,
-  floating badges, fake telemetry, version labels, and ornamental section numbers.
+- The route diagram is the one deliberate grid surface. Keep its grid quiet and pair it with a
+  restrained violet wash so it reads as a system map rather than generic decoration.
+- Avoid global decorative grids, glowing blobs, oversized gradients, random particles, glass
+  cards, floating badges, fake telemetry, version labels, and ornamental section numbers.
 - Shadows and gradients may add restrained depth inside the route diagram; they must not become the
   page's visual identity.
 - Prefer rules, aligned rows, and whitespace over repeated equal-sized feature cards.
@@ -112,6 +114,8 @@ private answer.
   together.
 - Forward and reverse scrolling must both resolve cleanly. No stale cards or overlapping labels may
   remain after a transition.
+- Show “Scroll to follow the route” before the first transition, then fade it as the route begins.
+  Hide it when reduced motion replaces the scroll-driven story.
 - Preserve `prefers-reduced-motion` and the `?motion=calm` test override. Reduced motion must show a
   complete, understandable static story rather than hiding information.
 - Avoid ambient motion that does not communicate routing, ownership, execution, or delivery.

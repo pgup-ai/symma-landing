@@ -66,6 +66,7 @@
   --packet-r: 0deg;
   --mpacket-y: 18;
   --rail-o: 0;
+  --cue-o: 1;
   --header-rule: 0;
 }
 
@@ -472,8 +473,17 @@ p {
   width: 100%;
   border: 1px solid var(--border);
   border-radius: 18px;
-  background: linear-gradient(145deg, rgba(24, 25, 33, 0.98), rgba(13, 14, 19, 0.98));
-  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(145deg, rgba(24, 25, 33, 0.98), rgba(13, 14, 19, 0.98));
+  background-size:
+    38px 38px,
+    38px 38px,
+    auto;
+  box-shadow:
+    0 28px 80px rgba(0, 0, 0, 0.34),
+    0 0 80px rgba(159, 139, 234, 0.025);
 }
 
 .architecture::before {
@@ -481,7 +491,10 @@ p {
   z-index: 0;
   inset: 0;
   border-radius: inherit;
-  background: linear-gradient(90deg, transparent 49.9%, rgba(255, 255, 255, 0.025) 50%);
+  background:
+    radial-gradient(circle at 50% 50%, rgba(159, 139, 234, 0.075), transparent 27%),
+    radial-gradient(circle at 86% 24%, rgba(192, 180, 238, 0.04), transparent 31%),
+    linear-gradient(90deg, transparent 49.9%, rgba(255, 255, 255, 0.025) 50%);
   content: '';
   pointer-events: none;
 }
@@ -1236,6 +1249,28 @@ p {
   text-align: right;
 }
 
+.scroll-cue {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  margin: 11px 1px 0;
+  color: var(--dim);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  opacity: var(--cue-o);
+}
+
+.scroll-cue svg {
+  width: 14px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.5;
+}
+
 .calm-summary {
   display: none;
 }
@@ -1792,6 +1827,10 @@ a.package-row:hover {
     display: none;
   }
 
+  .scroll-cue {
+    display: none;
+  }
+
   .architecture-mobile {
     display: block;
     min-height: 364px;
@@ -2209,6 +2248,7 @@ body[data-motion='calm'] .hero-copy {
 
 body[data-motion='calm'] .step-copies,
 body[data-motion='calm'] .progress-rail,
+body[data-motion='calm'] .scroll-cue,
 body[data-motion='calm'] .packet {
   display: none;
 }
