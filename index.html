@@ -5,28 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Symma routes every Slack user to their own ACP agent, running with their own login on infrastructure they control."
+      content="Send a task from Slack to the AI agent already running on your computer or cloud machine."
     />
     <meta name="theme-color" content="#09090b" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Symma — One Slack bot. Your own agent." />
+    <meta property="og:title" content="Symma | Your own agent, from Slack" />
     <meta
       property="og:description"
-      content="Route every Slack user to their own local or cloud agent through ACP—without handing provider credentials to the bot."
+      content="Use your own coding agent from Slack without copying API keys or sharing someone else's login."
     />
     <meta property="og:url" content="https://symma.dev/" />
     <meta name="twitter:card" content="summary" />
     <link rel="canonical" href="https://symma.dev/" />
     <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Onest:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
     <link rel="stylesheet" href="./styles.css" />
     <script src="./landing.js" defer></script>
-    <title>Symma — One Slack bot. Your own agent.</title>
+    <title>Symma | Your own agent, from Slack</title>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -63,18 +57,14 @@
           <div class="story-grid shell">
             <div class="story-copy">
               <div class="hero-copy">
-                <div class="eyebrow">
-                  <span class="eyebrow-dot" aria-hidden="true"></span>
-                  Personal ACP, from Slack
-                  <span class="vision-tag">M3 vision</span>
-                </div>
+                <div class="eyebrow">Personal agents for Slack</div>
                 <h1 id="hero-title">
                   One Slack bot.<br />
                   <span>Your own agent.</span>
                 </h1>
                 <p class="hero-lede">
-                  Symma routes every person to the coding agent already running on their laptop or
-                  cloud machine—using their own login, inside workspaces they control.
+                  Send a task in Slack. Symma routes it to your own coding agent, using the login
+                  already on your machine.
                 </p>
                 <div class="hero-actions">
                   <a
@@ -83,71 +73,54 @@
                     target="_blank"
                     rel="noreferrer"
                   >
-                    Explore on GitHub
+                    View on GitHub
                     <svg viewBox="0 0 16 16" aria-hidden="true">
                       <path d="M4 12 12 4M6 4h6v6" />
                     </svg>
                   </a>
-                  <a
-                    class="button button-secondary"
-                    href="https://github.com/pgup-ai/symma/blob/main/docs/design/m3-slack-companion.md"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Read the M3 design
-                  </a>
+                  <a class="button button-secondary" href="#how"> See how it works </a>
                 </div>
-                <p class="trust-line">
-                  <svg viewBox="0 0 18 18" aria-hidden="true">
-                    <path
-                      d="M9 1.75 15 4v4.35c0 3.65-2.45 6.7-6 7.9-3.55-1.2-6-4.25-6-7.9V4l6-2.25Z"
-                    />
-                    <path d="m6.6 9 1.55 1.55L11.7 7" />
-                  </svg>
-                  Provider credentials stay on your companion. They never enter Slack or the hosted
-                  gateway.
-                </p>
               </div>
 
               <div class="step-copies" aria-live="polite">
                 <article class="step-copy" data-step-copy="0">
-                  <span class="step-number">01 / Ask</span>
-                  <h2>Start where the context already lives.</h2>
+                  <span class="step-number">Ask in Slack</span>
+                  <h2>Start with the conversation.</h2>
                   <p>
-                    Mention Symma in a channel thread or begin in DM. The source thread becomes
-                    context for a new task—not a shared agent session.
+                    Mention Symma in a thread. It brings that conversation into the task, so you do
+                    not have to explain everything again.
                   </p>
                 </article>
                 <article class="step-copy" data-step-copy="1">
-                  <span class="step-number">02 / Go private</span>
-                  <h2>Work starts privately by default.</h2>
+                  <span class="step-number">Move to a private DM</span>
+                  <h2>Your answer starts with you.</h2>
                   <p>
-                    The bot opens a personal DM conversation while the task begins. Invoking an
-                    agent is not consent to publish what it says.
+                    Symma opens a private conversation for the task. Nothing is posted back to the
+                    channel unless you choose to share it.
                   </p>
                 </article>
                 <article class="step-copy" data-step-copy="2">
-                  <span class="step-number">03 / Route to you</span>
-                  <h2>Identity decides the destination.</h2>
+                  <span class="step-number">Find your agent</span>
+                  <h2>Your message goes to your machine.</h2>
                   <p>
-                    The gateway resolves Slack actor → owner → endpoint. Alice reaches her MacBook.
-                    Bob reaches his cloud machine. No shared agent identity in between.
+                    Symma knows which computer belongs to each person. Alice reaches her MacBook.
+                    Bob reaches his cloud machine.
                   </p>
                 </article>
                 <article class="step-copy" data-step-copy="3">
-                  <span class="step-number">04 / Run there</span>
-                  <h2>Your machine does the work.</h2>
+                  <span class="step-number">Work on your machine</span>
+                  <h2>Your existing agent does the work.</h2>
                   <p>
-                    A signed envelope reaches the outbound companion, which starts an
-                    already-authenticated ACP agent inside a locally allowlisted workspace.
+                    The agent opens a project you approved and uses the login already on that
+                    machine. No API key travels through Slack.
                   </p>
                 </article>
                 <article class="step-copy" data-step-copy="4">
-                  <span class="step-number">05 / Review and share</span>
-                  <h2>The result is yours before it is public.</h2>
+                  <span class="step-number">Review before sharing</span>
+                  <h2>You decide who sees the result.</h2>
                   <p>
-                    Follow up in private, keep the draft, or explicitly share it to the source
-                    thread. The publishing decision stays with the person who invoked the agent.
+                    Keep talking in private. When the answer is ready, you can share it back to the
+                    original thread.
                   </p>
                 </article>
               </div>
@@ -160,11 +133,8 @@
                 aria-label="A Slack task passes through an owner check in the Symma gateway to the invoking user's outbound companion. Credentials remain on that user's machine and the result returns as a private draft."
               >
                 <div class="architecture-topbar">
-                  <span class="topbar-title">
-                    <span class="topbar-pulse" aria-hidden="true"></span>
-                    owner-scoped route
-                  </span>
-                  <span class="topbar-id">conversation / 7F3A</span>
+                  <span class="topbar-title"> Each person gets their own route </span>
+                  <span class="topbar-id">Private by default</span>
                 </div>
 
                 <svg
@@ -175,16 +145,9 @@
                 >
                   <defs>
                     <linearGradient id="routeActive" x1="0" x2="1">
-                      <stop offset="0" stop-color="#a78bfa" />
-                      <stop offset="1" stop-color="#67e8f9" />
+                      <stop offset="0" stop-color="#9f8bea" />
+                      <stop offset="1" stop-color="#c0b4ee" />
                     </linearGradient>
-                    <filter id="routeGlow">
-                      <feGaussianBlur stdDeviation="5" result="blur" />
-                      <feMerge>
-                        <feMergeNode in="blur" />
-                        <feMergeNode in="SourceGraphic" />
-                      </feMerge>
-                    </filter>
                   </defs>
                   <path class="route-base" d="M310 278 C380 278 390 278 453 278" />
                   <path class="route-base" d="M548 278 C615 278 625 188 694 188" />
@@ -219,39 +182,39 @@
                       <span class="avatar avatar-alice">A</span>
                       <div>
                         <strong>Alice</strong>
-                        <p>Can someone trace the retry regression?</p>
+                        <p>Can someone check why checkout is failing?</p>
                       </div>
                     </div>
                     <div class="slack-message ask-message">
                       <span class="avatar avatar-alice">A</span>
                       <div>
                         <strong>Alice</strong>
-                        <p><em>@symma</em> inspect this on my branch</p>
+                        <p><em>@symma</em> please investigate this</p>
                       </div>
                     </div>
                     <div class="slack-message bob-message">
                       <span class="avatar avatar-bob">B</span>
                       <div>
                         <strong>Bob</strong>
-                        <p><em>@symma</em> check the deploy logs too</p>
+                        <p><em>@symma</em> check my deployment too</p>
                       </div>
                     </div>
                   </div>
                   <div class="private-thread">
-                    <span class="private-label">New private task</span>
-                    <p>Using <strong>Alice’s MacBook</strong> · codex</p>
+                    <span class="private-label">Private conversation</span>
+                    <p>Working with <strong>Alice’s agent</strong> on her MacBook</p>
                     <div class="delivery-actions">
                       <span class="selected">Keep private</span>
-                      <span>Post when ready</span>
+                      <span>Share later</span>
                     </div>
                   </div>
                   <div class="draft-card">
                     <span class="draft-status">
                       <i aria-hidden="true"></i>
-                      Private draft ready
+                      Answer ready in Alice’s DM
                     </span>
-                    <p>The retry path drops the original session cursor…</p>
-                    <span class="share-control">Share to thread →</span>
+                    <p>Checkout retries lose the original session...</p>
+                    <span class="share-control">Share to thread</span>
                   </div>
                 </section>
 
@@ -261,13 +224,12 @@
                   <span class="gateway-core">
                     <span class="gateway-mark" aria-hidden="true">s</span>
                   </span>
-                  <strong>gateway</strong>
-                  <small>route · journal · authz</small>
+                  <strong>Symma</strong>
                   <span class="owner-check">
                     <svg viewBox="0 0 16 16" aria-hidden="true">
                       <path d="m3 8 3 3 7-7" />
                     </svg>
-                    owner verified
+                    Alice matched
                   </span>
                 </section>
 
@@ -279,7 +241,7 @@
                       </span>
                       <span>
                         <strong>Alice’s MacBook</strong>
-                        <small>outbound companion</small>
+                        <small>her connected agent</small>
                       </span>
                       <span class="online-dot">online</span>
                     </div>
@@ -287,7 +249,7 @@
                       <span class="agent-icon">›_</span>
                       <span>
                         <strong>codex</strong>
-                        <small>workspace / payments-api</small>
+                        <small>approved project: payments-api</small>
                       </span>
                       <span class="agent-state">running</span>
                     </div>
@@ -296,7 +258,7 @@
                         <circle cx="5.5" cy="8" r="2.5" />
                         <path d="M8 8h6M12 8v2M10 8v2" />
                       </svg>
-                      provider auth · local only
+                      login stays on this machine
                     </div>
                     <div class="terminal-lines" aria-hidden="true">
                       <span></span><span></span><span></span>
@@ -308,7 +270,7 @@
                       <span class="cloud-icon" aria-hidden="true"></span>
                       <span>
                         <strong>Bob’s cloud VM</strong>
-                        <small>outbound companion</small>
+                        <small>his connected agent</small>
                       </span>
                       <span class="online-dot">online</span>
                     </div>
@@ -316,7 +278,7 @@
                       <span class="agent-icon">›_</span>
                       <span>
                         <strong>devin</strong>
-                        <small>workspace / infrastructure</small>
+                        <small>approved project: infrastructure</small>
                       </span>
                       <span class="agent-state">ready</span>
                     </div>
@@ -325,7 +287,7 @@
                         <circle cx="5.5" cy="8" r="2.5" />
                         <path d="M8 8h6M12 8v2M10 8v2" />
                       </svg>
-                      provider auth · local only
+                      login stays on this machine
                     </div>
                   </div>
                 </section>
@@ -338,9 +300,7 @@
                 </div>
 
                 <div class="architecture-status">
-                  <span class="status-index">01</span>
                   <span class="status-copy">ask received</span>
-                  <span class="status-seq">seq 0001</span>
                 </div>
               </div>
 
@@ -350,39 +310,36 @@
                 aria-label="A vertical diagram showing Slack routing through the Symma gateway to a personal companion, where credentials remain local, before returning a private draft."
               >
                 <div class="mobile-architecture-top">
-                  <span><i></i> owner-scoped route</span>
-                  <small>M3 vision</small>
+                  <span>Message route</span>
+                  <small>Private by default</small>
                 </div>
                 <div class="mobile-node mobile-slack">
-                  <span class="mobile-node-index">01</span>
                   <div>
-                    <strong>Slack context</strong>
-                    <p><b>@symma</b> inspect this on my branch</p>
+                    <strong>Ask from Slack</strong>
+                    <p><b>@symma</b> please investigate this</p>
                   </div>
-                  <span class="mobile-private">private task</span>
+                  <span class="mobile-private">private DM</span>
                 </div>
                 <div class="mobile-route-line" aria-hidden="true"></div>
                 <div class="mobile-node mobile-gateway">
-                  <span class="mobile-node-index">02</span>
                   <div>
-                    <strong>Symma gateway</strong>
-                    <p>actor → owner → endpoint</p>
+                    <strong>Symma finds Alice’s agent</strong>
+                    <p>Her Slack account is paired with her machine</p>
                   </div>
-                  <span class="mobile-verified">verified</span>
+                  <span class="mobile-verified">matched</span>
                 </div>
                 <div class="mobile-route-line" aria-hidden="true"></div>
                 <div class="mobile-node mobile-endpoint">
-                  <span class="mobile-node-index">03</span>
                   <div>
-                    <strong>Alice’s companion</strong>
-                    <p>codex · payments-api · running</p>
-                    <span class="mobile-credential">⌁ provider auth stays here</span>
+                    <strong>Alice’s agent does the work</strong>
+                    <p>MacBook, approved project</p>
+                    <span class="mobile-credential">Login stays on this machine</span>
                   </div>
                   <span class="mobile-online">online</span>
                 </div>
                 <div class="mobile-draft">
-                  <span>Private draft ready</span>
-                  <strong>Review first. Share when ready.</strong>
+                  <span>Answer ready</span>
+                  <strong>Review it privately, then share.</strong>
                 </div>
                 <div class="packet packet-mobile" aria-hidden="true">
                   <svg viewBox="0 0 18 18">
@@ -397,20 +354,20 @@
                   <button type="button" data-jump="0" aria-label="Go to Ask">
                     <span><i></i></span>
                   </button>
-                  <button type="button" data-jump="1" aria-label="Go to Go private">
+                  <button type="button" data-jump="1" aria-label="Go to Private DM">
                     <span><i></i></span>
                   </button>
-                  <button type="button" data-jump="2" aria-label="Go to Route to you">
+                  <button type="button" data-jump="2" aria-label="Go to Find your agent">
                     <span><i></i></span>
                   </button>
-                  <button type="button" data-jump="3" aria-label="Go to Run there">
+                  <button type="button" data-jump="3" aria-label="Go to Work on your machine">
                     <span><i></i></span>
                   </button>
-                  <button type="button" data-jump="4" aria-label="Go to Review and share">
+                  <button type="button" data-jump="4" aria-label="Go to Review before sharing">
                     <span><i></i></span>
                   </button>
                 </div>
-                <span class="progress-label">01 · ASK</span>
+                <span class="progress-label">Ask in Slack</span>
               </div>
 
               <p class="scroll-cue">
@@ -421,13 +378,13 @@
               </p>
 
               <div class="calm-summary">
-                <span>Slack context</span>
+                <span>Slack message</span>
                 <i aria-hidden="true">→</i>
-                <span>owner check</span>
+                <span>personal match</span>
                 <i aria-hidden="true">→</i>
-                <span>your companion</span>
+                <span>your agent</span>
                 <i aria-hidden="true">→</i>
-                <span>private draft</span>
+                <span>private answer</span>
               </div>
             </div>
           </div>
@@ -436,54 +393,37 @@
 
       <section id="how" class="principles section shell" aria-labelledby="principles-title">
         <div class="section-intro">
-          <span class="section-kicker">The difference</span>
-          <h2 id="principles-title">Not another shared agent box.</h2>
+          <h2 id="principles-title">One Slack app. Separate personal agents.</h2>
           <p>
-            Symma keeps the convenience of one Slack app without collapsing everyone into one
-            machine, one login, and one ambient set of permissions.
+            Every message stays tied to the person who sent it, the machine they connected, and the
+            projects they approved.
           </p>
         </div>
 
         <div class="principle-grid">
           <article class="principle-card">
-            <span class="card-index">01</span>
-            <div class="principle-icon identity-icon" aria-hidden="true">
-              <span>A</span>
-              <span>B</span>
-            </div>
-            <h3>Your identity</h3>
+            <h3>Each person reaches only their own agent</h3>
             <p>
-              Every Slack event carries its actor. The route resolves to that person’s endpoint—not
-              the last agent used in the channel.
+              Alice’s message goes to Alice’s connected agent. Bob’s goes to Bob’s. A busy channel
+              never becomes a shared machine.
             </p>
-            <span class="card-proof">actor ≠ conversation owner</span>
-          </article>
-          <article class="principle-card card-raised">
-            <span class="card-index">02</span>
-            <div class="principle-icon key-icon" aria-hidden="true">
-              <svg viewBox="0 0 32 32">
-                <circle cx="11" cy="16" r="5" />
-                <path d="M16 16h12M24 16v4M20 16v4" />
-              </svg>
-            </div>
-            <h3>Your credentials</h3>
-            <p>
-              The companion uses the agent login already present on the machine. Provider
-              credentials never enter Slack or the hosted gateway.
-            </p>
-            <span class="card-proof">credential boundary / local</span>
+            <span class="card-proof">No shared machine or login</span>
           </article>
           <article class="principle-card">
-            <span class="card-index">03</span>
-            <div class="principle-icon workspace-icon" aria-hidden="true">
-              <span>~/</span>
-            </div>
-            <h3>Your workspace</h3>
+            <h3>Your login stays on your machine</h3>
             <p>
-              Real filesystem roots and write permissions are configured by the endpoint owner
-              locally, then advertised as opaque workspace IDs.
+              Symma uses the coding agent you already signed into. Provider credentials do not enter
+              Slack or the hosted gateway.
             </p>
-            <span class="card-proof">path never supplied by Slack</span>
+            <span class="card-proof">No API key to copy into a bot</span>
+          </article>
+          <article class="principle-card">
+            <h3>You choose where the agent can work</h3>
+            <p>
+              Project folders and permissions are chosen on the connected machine. A Slack message
+              cannot point the agent at an arbitrary path.
+            </p>
+            <span class="card-proof">Only approved projects appear in Slack</span>
           </article>
         </div>
       </section>
@@ -491,64 +431,37 @@
       <section class="onboarding section" aria-labelledby="onboarding-title">
         <div class="shell onboarding-grid">
           <div class="section-intro onboarding-copy">
-            <span class="section-kicker">M3 onboarding target</span>
-            <h2 id="onboarding-title">One install.<br />One local command.</h2>
+            <h2 id="onboarding-title">Connect once. Then work from Slack.</h2>
             <p>
-              The setup work happens once, on the machine where the agent is already authenticated.
-              No individual Slack app construction, open port, or provider credential upload.
+              The planned setup uses one companion install and a one-time pairing code. After that,
+              the work starts from Slack.
             </p>
           </div>
 
           <ol class="onboarding-steps">
             <li>
-              <span class="onboarding-number">01</span>
+              <span class="onboarding-number">In Slack</span>
               <div>
-                <strong>Open Symma in Slack</strong>
-                <p>The pilot starts with an operator-installed Socket Mode app.</p>
+                <strong>Choose “Connect my agent”</strong>
+                <p>Symma gives you a short-lived pairing code.</p>
               </div>
-              <span class="step-chip">workspace</span>
             </li>
             <li>
-              <span class="onboarding-number">02</span>
+              <span class="onboarding-number">On your machine</span>
               <div>
-                <strong>Click “Connect my agent”</strong>
-                <p>Receive a short-lived pairing code bound to you.</p>
+                <strong>Install and pair the companion</strong>
+                <p>
+                  Run the setup on the computer or cloud machine where your agent is already signed
+                  in.
+                </p>
               </div>
-              <span class="step-chip">identity</span>
-            </li>
-            <li class="command-step">
-              <span class="onboarding-number">03</span>
-              <div>
-                <strong>Run one command on your machine</strong>
-                <div class="command-row">
-                  <code
-                    >curl -fsSL https://symma.dev/install.sh | sh -s -- pair FROG-2481-QK7M</code
-                  >
-                  <button
-                    class="copy-command"
-                    type="button"
-                    data-copy-command
-                    aria-label="Copy example pairing command"
-                  >
-                    <svg viewBox="0 0 18 18" aria-hidden="true">
-                      <rect x="6" y="6" width="9" height="9" rx="2" />
-                      <path
-                        d="M12 6V4.5A1.5 1.5 0 0 0 10.5 3h-6A1.5 1.5 0 0 0 3 4.5v6A1.5 1.5 0 0 0 4.5 12H6"
-                      />
-                    </svg>
-                    <span>Copy</span>
-                  </button>
-                </div>
-              </div>
-              <span class="step-chip">companion</span>
             </li>
             <li>
-              <span class="onboarding-number">04</span>
+              <span class="onboarding-number">Then</span>
               <div>
-                <strong>Choose what Symma detected</strong>
-                <p>Pick an online device, ACP agent, and allowlisted workspace.</p>
+                <strong>Choose an agent and project</strong>
+                <p>Slack shows only the machines, agents, and project folders you approved.</p>
               </div>
-              <span class="step-chip online">connected</span>
             </li>
           </ol>
         </div>
@@ -556,50 +469,47 @@
 
       <section id="trust" class="trust section shell" aria-labelledby="trust-title">
         <div class="section-intro trust-heading">
-          <span class="section-kicker">Trust model</span>
-          <h2 id="trust-title">The route is the security model.</h2>
+          <h2 id="trust-title">What stays where</h2>
           <p>
-            The M3 work makes personal routing safe at the same time it makes Symma a product. Each
-            boundary has a visible owner and a narrow job.
+            Slack carries the request. Symma finds the right person. Your machine holds the agent,
+            project files, and provider login.
           </p>
         </div>
 
         <div class="trust-board">
           <div class="trust-lane trust-lane-slack">
             <span class="trust-lane-label">Slack</span>
-            <strong>Context and identity</strong>
-            <p>Supplies the invoking user and the thread snapshot.</p>
-            <span class="boundary-label">no provider credential</span>
+            <strong>Your message and identity</strong>
+            <p>Sends who asked and the conversation they were in.</p>
+            <span class="boundary-label">No provider login</span>
           </div>
           <div class="trust-arrow" aria-hidden="true">
             <span></span>
             <svg viewBox="0 0 24 12"><path d="M1 6h21m-5-5 5 5-5 5" /></svg>
           </div>
           <div class="trust-lane trust-lane-gateway">
-            <span class="trust-lane-label">Hosted gateway</span>
-            <strong>Rendezvous and authorization</strong>
-            <p>Checks ownership, relays signed frames, and journals sessions.</p>
-            <span class="boundary-label">sees relayed content</span>
+            <span class="trust-lane-label">Symma’s hosted service</span>
+            <strong>Finds your connected agent</strong>
+            <p>Checks that the request belongs to you and relays it.</p>
+            <span class="boundary-label">Sees the relayed conversation</span>
           </div>
           <div class="trust-arrow" aria-hidden="true">
             <span></span>
             <svg viewBox="0 0 24 12"><path d="M1 6h21m-5-5 5 5-5 5" /></svg>
           </div>
           <div class="trust-lane trust-lane-endpoint">
-            <span class="trust-lane-label">Your endpoint</span>
-            <strong>Agent and filesystem</strong>
-            <p>Holds local auth, workspaces, and the process that does the work.</p>
-            <span class="boundary-label boundary-safe">credential stays here</span>
+            <span class="trust-lane-label">Your machine</span>
+            <strong>Runs your agent</strong>
+            <p>Opens an approved project using the login already on your machine.</p>
+            <span class="boundary-label boundary-safe">Login and files stay here</span>
           </div>
         </div>
 
         <ul class="trust-facts" aria-label="Trust model details">
-          <li><span>01</span> Companion connections are outbound-only</li>
-          <li><span>02</span> Pairing binds a device to a Slack identity</li>
-          <li><span>03</span> Endpoint and journal access is owner-scoped</li>
-          <li><span>04</span> Public invocation creates private work</li>
-          <li><span>05</span> Sharing requires explicit authorization</li>
-          <li><span>06</span> Credentials stay on the user-controlled endpoint</li>
+          <li>Your machine connects out. You do not open an inbound port.</li>
+          <li>Pairing ties a machine to one Slack user.</li>
+          <li>Tasks and history are visible only to their owner.</li>
+          <li>Nothing is posted to a channel until you choose to share it.</li>
         </ul>
       </section>
 
@@ -607,12 +517,11 @@
         <div class="shell">
           <div class="foundation-heading">
             <div class="section-intro">
-              <span class="section-kicker">Built, then becoming</span>
-              <h2 id="foundation-title">A real foundation.<br />An honest roadmap.</h2>
+              <h2 id="foundation-title">What works today. What comes next.</h2>
             </div>
             <p>
-              The relay path has been dogfooded end to end. The multi-user identity and Slack
-              experience are the M3 work ahead.
+              The agent connection already works end to end. Personal pairing and the Slack
+              experience are the next milestone.
             </p>
           </div>
 
@@ -620,10 +529,9 @@
             <section class="status-column status-now" aria-labelledby="now-title">
               <div class="status-column-heading">
                 <div>
-                  <span class="status-dot" aria-hidden="true"></span>
-                  <span>Foundation available today</span>
+                  <span>Available now</span>
                 </div>
-                <small>4 packages</small>
+                <small>In this repository</small>
               </div>
               <h3 id="now-title" class="sr-only">Foundation available today</h3>
               <a
@@ -633,8 +541,8 @@
                 rel="noreferrer"
               >
                 <code>@symma/protocol</code>
-                <span>ACP framing, agent specs, signed envelopes</span>
-                <b>npm · 0.1.1</b>
+                <span>The shared language used by agents and Symma</span>
+                <b>npm 0.1.1</b>
               </a>
               <a
                 class="package-row"
@@ -643,17 +551,17 @@
                 rel="noreferrer"
               >
                 <code>@symma/client</code>
-                <span>Local and gateway-routed ACP prompts</span>
-                <b>npm · 0.2.0</b>
+                <span>Starts a task locally or through the gateway</span>
+                <b>npm 0.2.0</b>
               </a>
               <div class="package-row">
                 <code>@symma/gateway</code>
-                <span>Relay, journal, viewer, HTTP API</span>
+                <span>Routes tasks and stores their history</span>
                 <b>private app</b>
               </div>
               <div class="package-row">
                 <code>@symma/companion</code>
-                <span>Outbound attach loop and agent lifecycle</span>
+                <span>Connects a machine and runs its agent</span>
                 <b>private app</b>
               </div>
             </section>
@@ -661,31 +569,26 @@
             <section class="status-column status-next" aria-labelledby="next-title">
               <div class="status-column-heading">
                 <div>
-                  <span class="status-ring" aria-hidden="true"></span>
-                  <span>M3 next</span>
+                  <span>Next milestone</span>
                 </div>
-                <small>design</small>
+                <small>Planned</small>
               </div>
               <h3 id="next-title" class="sr-only">M3 next</h3>
               <div class="roadmap-row">
-                <span>M3a</span>
-                <strong>Owner-scoped tenancy</strong>
-                <small>Postgres, tokens, journals, lifecycle</small>
+                <strong>Personal accounts</strong>
+                <small>Keep each person’s machines, tasks, and history separate</small>
               </div>
               <div class="roadmap-row">
-                <span>M3b</span>
-                <strong>Pairing</strong>
-                <small>One command, bound endpoint identity</small>
+                <strong>Simple pairing</strong>
+                <small>Connect a machine with a one-time code</small>
               </div>
               <div class="roadmap-row">
-                <span>M3c</span>
-                <strong>Personal companion</strong>
-                <small>Detection, updater, login service</small>
+                <strong>Companion app</strong>
+                <small>Find installed agents and keep the connection running</small>
               </div>
               <div class="roadmap-row">
-                <span>M3d</span>
-                <strong>Slack conversations</strong>
-                <small>Private delivery, share-back, presence</small>
+                <strong>Private Slack tasks</strong>
+                <small>Review in DM, continue the conversation, and share when ready</small>
               </div>
             </section>
           </div>
@@ -693,17 +596,10 @@
       </section>
 
       <section class="final-cta section shell" aria-labelledby="final-title">
-        <div class="cta-signal" aria-hidden="true">
-          <span></span><span></span><span></span><span></span><span></span>
-        </div>
-        <span class="section-kicker">An alliance, not a handoff</span>
-        <h2 id="final-title">
-          Your agent is already yours.<br />
-          <span>Slack should know where to find it.</span>
-        </h2>
+        <h2 id="final-title">Use the agent you already trust, from Slack.</h2>
         <p>
-          Symma is open source. The protocol and client are published today; the personal Slack
-          layer is the M3 path ahead.
+          Symma is open source. Follow the build on GitHub or read the design for the personal Slack
+          experience.
         </p>
         <div class="hero-actions final-actions">
           <a
@@ -712,7 +608,7 @@
             target="_blank"
             rel="noreferrer"
           >
-            Explore on GitHub
+            View on GitHub
             <svg viewBox="0 0 16 16" aria-hidden="true">
               <path d="M4 12 12 4M6 4h6v6" />
             </svg>
@@ -739,12 +635,11 @@
             </span>
             <span>symma</span>
           </a>
-          <p>Inspired by the Greek <i>symmachia</i>, meaning alliance.</p>
+          <p><i>Symma</i> comes from the Greek word for alliance.</p>
         </div>
         <div class="footer-meta">
-          <span>Open source · MIT</span>
-          <span>Pronounced SIM-uh</span>
-          <a href="https://github.com/pgup-ai/symma" target="_blank" rel="noreferrer">GitHub ↗</a>
+          <span>Open source, MIT</span>
+          <a href="https://github.com/pgup-ai/symma" target="_blank" rel="noreferrer">GitHub</a>
         </div>
       </div>
     </footer>
