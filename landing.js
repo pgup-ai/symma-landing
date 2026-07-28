@@ -118,13 +118,15 @@ const apply = (progress) => {
     setVariable(`--rf${index + 1}`, `${fill.toFixed(2)}%`);
   });
 
-  const draft = smooth(progress, 0.79, 0.86);
-  const privateThread = smooth(progress, 0.22, 0.32) * (1 - smooth(progress, 0.72, 0.78));
+  const draft = smooth(progress, 0.76, 0.84);
+  const privateEntry = smooth(progress, 0.22, 0.32);
+  const privateThread = privateEntry * (1 - draft);
   const owner = smooth(progress, 0.4, 0.47);
   const bob = smooth(progress, 0.43, 0.49);
   const running = smooth(progress, 0.57, 0.68);
 
   setVariable('--dm-o', privateThread.toFixed(4));
+  setVariable('--private-card-o', privateEntry.toFixed(4));
   setVariable('--owner-o', owner.toFixed(4));
   setVariable('--bob-o', bob.toFixed(4));
   setVariable('--run-o', running.toFixed(4));

@@ -56,6 +56,7 @@
   --s4-o: 0;
   --s5-o: 0;
   --dm-o: 0;
+  --private-card-o: 0;
   --bob-o: 0;
   --owner-o: 0;
   --run-o: 0;
@@ -535,7 +536,9 @@ p {
 }
 
 .topbar-id {
-  color: var(--dim);
+  color: var(--muted);
+  font-family: var(--font-sans);
+  font-size: 12px;
 }
 
 .visual-node {
@@ -774,8 +777,8 @@ p {
 }
 
 .private-thread {
-  opacity: var(--dm-o);
-  transform: translateY(calc((1 - var(--dm-o)) * 13px));
+  opacity: var(--private-card-o);
+  transform: translateY(calc((1 - var(--private-card-o)) * 13px));
 }
 
 .private-label {
@@ -812,11 +815,12 @@ p {
   border-color: rgba(159, 139, 234, 0.42);
   background: rgba(159, 139, 234, 0.12);
   color: var(--violet-bright);
+  font-weight: 600;
 }
 
 .draft-card {
-  opacity: var(--draft-o);
-  transform: translateY(calc((1 - var(--draft-o)) * 13px));
+  opacity: 1;
+  transform: translateY(calc((1 - var(--draft-o)) * 130%));
 }
 
 .draft-status {
@@ -1243,10 +1247,11 @@ p {
 }
 
 .progress-label {
-  min-width: 124px;
+  min-width: 140px;
   color: var(--muted);
-  font-size: 11px;
+  font-size: 13px;
   text-align: right;
+  white-space: nowrap;
 }
 
 .scroll-cue {
@@ -1297,7 +1302,6 @@ p {
 .section-intro > p,
 .foundation-heading > p {
   margin-bottom: 0;
-  color: var(--muted);
   color: var(--text-soft);
   font-size: 17px;
   line-height: 1.65;
@@ -1666,7 +1670,6 @@ a.package-row:hover {
 .final-cta > p {
   max-width: 620px;
   margin: 0 auto;
-  color: var(--muted);
   color: var(--text-soft);
   font-size: 17px;
   line-height: 1.6;
@@ -1862,7 +1865,8 @@ a.package-row:hover {
 
   .mobile-architecture-top small {
     color: var(--muted);
-    font-size: 9px;
+    font-family: var(--font-sans);
+    font-size: 11px;
   }
 
   .mobile-node {
@@ -1987,11 +1991,6 @@ a.package-row:hover {
     margin-top: 10px;
   }
 
-  .progress-label {
-    min-width: 92px;
-    font-size: 10px;
-  }
-
   .section {
     padding-top: 96px;
     padding-bottom: 96px;
@@ -2027,10 +2026,6 @@ a.package-row:hover {
 
   .trust-facts {
     grid-template-columns: repeat(2, 1fr);
-  }
-
-  .foundation-heading {
-    display: block;
   }
 
   .foundation-heading > p {
@@ -2129,11 +2124,6 @@ a.package-row:hover {
 
   .progress-buttons {
     gap: 4px;
-  }
-
-  .progress-label {
-    min-width: 112px;
-    font-size: 9.5px;
   }
 
   .section-intro h2,
