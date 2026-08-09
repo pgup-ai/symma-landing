@@ -28,11 +28,10 @@ and the app, where the mark needs to sit on your own surface colours.
 
 ## Colour
 
-| Where                        | Colour                | Contrast          |
-| ---------------------------- | --------------------- | ----------------- |
-| Dark backgrounds (`#09090b`) | Violet `#9f8bea`      | 6.97 : 1          |
-| Light backgrounds (white)    | Violet Ink `#5b4d95`  | 7.14 : 1          |
-| Mid surfaces                 | Violet Deep `#7161b6` | 5.14 : 1 on white |
+| Where                        | Colour                | Contrast |
+| ---------------------------- | --------------------- | -------- |
+| Dark backgrounds (`#09090b`) | Violet `#9f8bea`      | 6.97 : 1 |
+| Light backgrounds (white)    | Violet Deep `#7161b6` | 5.14 : 1 |
 
 `#9f8bea` measures 2.86 : 1 on white and `#c0b4ee` reaches 1.91 : 1 — both fail
 the 3 : 1 graphics minimum. Never use them on a light background.
@@ -42,20 +41,20 @@ live in `styles.css` under `:root`; `AGENTS.md` limits the site to that accent
 family. The supplied light-surface exports need sign-off before use. Until then,
 use Violet Deep `#7161b6` on light backgrounds and omit the `onlight` files.
 
-Note the naming: **Violet Ink** is `#5b4d95`, the light-mode brand violet. **Ink**
-alone is `#09090b`, the page background. The near-black monochrome file is
-`symma-mark-black.svg`, not `-ink`, so the two cannot be confused.
+Note the naming: **Violet Ink** is `#5b4d95` in the supplied light-surface exports.
+**Ink** alone is `#09090b`, the page background. The near-black monochrome file
+is `symma-mark-black.svg`, not `-ink`, so the two cannot be confused.
 
 ## Gradient
 
 Two stops, 135°, running along the clasp so one hook hands off to the other.
 
 - On dark: `#7161b6 → #9f8bea`
-- On light: `#5b4d95 → #7161b6`
+- Supplied light export (unapproved): `#5b4d95 → #7161b6`
 
-Use at 64 px and above only. Never on the favicon, the 24 px header lockup, or
-behind the mark as a glow. The flat violet is the default; the gradient is the
-exception.
+Use the approved dark gradient at 64 px and above only. Never on the favicon,
+the 24 px header lockup, or behind the mark as a glow. The flat violet is the
+default; the gradient is the exception.
 
 ## Sizes
 
