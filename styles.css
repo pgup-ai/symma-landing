@@ -249,6 +249,18 @@ button:focus-visible {
   --icon: url('./assets/integrations/opencode.svg');
 }
 
+.cursor-icon {
+  --icon: url('./assets/integrations/cursor.svg');
+}
+
+.goose-icon {
+  --icon: url('./assets/integrations/goose.svg');
+}
+
+.pi-icon {
+  --icon: url('./assets/integrations/pi.svg');
+}
+
 .header-rule {
   height: 1px;
   background: rgba(255, 255, 255, calc(var(--header-rule) * 0.1));
@@ -1341,32 +1353,42 @@ section[id] {
 
 .agent-logos {
   display: flex;
-  width: 68px;
+  width: 145px;
   border: 0;
 }
 
 .agent-logo {
   display: grid;
-  width: 30px;
-  height: 30px;
+  place-items: center;
+  width: 26px;
+  height: 26px;
   flex: none;
   border: 1px solid rgba(159, 139, 234, 0.36);
   border-radius: 50%;
   background-color: var(--surface-3);
+  color: var(--violet-bright);
+  font-style: normal;
 }
 
 .agent-logo + .agent-logo {
-  margin-left: -7px;
+  margin-left: -9px;
 }
 
-.agent-logo::before {
-  width: 15px;
-  height: 15px;
-  margin: auto;
-  background: var(--violet-bright);
-  content: '';
-  -webkit-mask: var(--icon) center / contain no-repeat;
-  mask: var(--icon) center / contain no-repeat;
+.agent-logo .brand-icon {
+  width: 13px;
+  height: 13px;
+}
+
+.agent-logo-text {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: -0.06em;
+}
+
+.agent-more {
+  font-size: 14px;
+  letter-spacing: 0;
 }
 
 .route-node small {
@@ -2068,7 +2090,7 @@ a.package-row:hover {
   }
 
   .route-machine {
-    grid-template-columns: 68px 1fr;
+    grid-template-columns: 145px 1fr;
   }
 
   .trust-facts {
@@ -2215,7 +2237,7 @@ a.package-row:hover {
   }
 
   .route-machine {
-    grid-template-columns: 68px 1fr;
+    grid-template-columns: 145px 1fr;
   }
 
   .route-symbol {
@@ -2224,7 +2246,7 @@ a.package-row:hover {
   }
 
   .agent-logos {
-    width: 68px;
+    width: 145px;
   }
 
   .trust-facts {
