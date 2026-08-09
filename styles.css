@@ -997,7 +997,7 @@ button:focus-visible {
 
 .answer-actions small {
   color: var(--muted);
-  font-size: 11px;
+  font-size: 12px;
 }
 
 .demo-composer {
@@ -1996,7 +1996,7 @@ a.package-row:hover {
 
   .mobile-actions small {
     color: var(--muted);
-    font-size: 11px;
+    font-size: 12px;
   }
 
   .mobile-actions span:first-child {
