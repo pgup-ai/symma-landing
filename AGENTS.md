@@ -13,8 +13,8 @@ Write for a curious Slack user first and a protocol implementer second.
 
 The page should explain this sequence in ordinary language:
 
-1. Ask from an existing Slack conversation or send Symma a top-level DM.
-2. Use that one top-level DM as the private root; every later turn stays in its thread.
+1. Mention Symma from the Slack thread that needs help.
+2. Continue in the top-level DM Symma opens; every later turn stays in that DM's thread.
 3. Symma finds the machine paired to that person.
 4. The person's existing agent works in an approved project.
 5. The person reviews the result and chooses whether to share it.
@@ -26,14 +26,16 @@ Keep these promises clear:
   questions all stay in that DM's thread.
 - Provider credentials, project files, and agent execution stay on the connected machine.
 - A Slack invocation is not permission to publish the answer. Work begins privately.
+- A direct DM is also supported, but it stays private because there is no source thread to return
+  to.
 - A user chooses the machines, agents, and project folders Slack may expose.
 - The hosted service relays the conversation and sees that relayed content; do not imply
   end-to-end secrecy that the architecture does not provide.
 
 The owner-scoped Slack path works today: pairing, private DM-thread conversations, session
 reattachment with transcript recovery, bounded text and image attachments, progress narration,
-workspace and access-mode controls, model-and-effort selection where the agent offers them, and
-explicit share-back. The current Slack app is an operator-installed internal Socket Mode app, not a
+workspace and access-mode controls, model selection where the agent offers it, and explicit
+share-back. The current Slack app is an operator-installed internal Socket Mode app, not a
 public Marketplace product. Preserve that distinction anywhere setup or availability is discussed.
 Never publish an install command, product control, or status claim that does not exist in the
 product.
@@ -77,7 +79,8 @@ explained clearly, not a generic AI landing-page template.
 - Prefer rules, aligned rows, and whitespace over repeated equal-sized feature cards.
 - Keep border radii modest and consistent. Pill shapes are reserved for compact status or boundary
   labels.
-- Reuse the wordmark geometry in the header and favicon. Do not introduce a second logo treatment.
+- Reuse the clasped-S geometry in the header, footer, favicon, and Slack avatar. Do not introduce a
+  second logo treatment.
 
 ## Typography
 
@@ -141,7 +144,9 @@ private answer.
 - `styles.css` owns tokens, layout, responsive behavior, and animation presentation.
 - `landing.js` owns the scroll-stage state machine and no general UI framework.
 - `assets/fonts/` contains the self-hosted font files and their licenses.
-- `favicon.svg` uses the same restrained brand geometry as the wordmark.
+- `brand/` contains the production mark, icon, Slack avatar, and social-preview assets.
+- `brand/icons/favicon.svg` uses the same restrained brand geometry as the wordmark.
+- `robots.txt` and `sitemap.xml` own crawler discovery for the public site.
 
 Search for an existing token, component class, or stage variable before adding a new one. Remove
 obsolete markup and styles in the same change; do not leave compatibility aliases or dead visual
@@ -161,6 +166,8 @@ python3 -m http.server 4173
 Then inspect:
 
 - 1280 × 800 desktop
+- 1024 × 768 desktop
+- 1440 × 900 desktop
 - 390 × 844 mobile
 - the first and final story stages
 - forward and reverse stage transitions
