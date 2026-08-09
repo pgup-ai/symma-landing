@@ -309,7 +309,6 @@ button:focus-visible {
   display: block;
   margin-bottom: 18px;
   color: var(--violet-bright);
-  font-family: var(--font-mono);
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 0.08em;
@@ -368,7 +367,7 @@ button:focus-visible {
 
 .button-primary {
   background: var(--violet);
-  color: #111014;
+  color: var(--ink);
 }
 
 .button-primary:hover {
@@ -1025,7 +1024,7 @@ button:focus-visible {
 .share-action {
   border-color: rgba(159, 139, 234, 0.5) !important;
   background: var(--violet);
-  color: #111014;
+  color: var(--ink);
 }
 
 .private-action {
@@ -1126,7 +1125,7 @@ button:focus-visible {
   margin: 10px 0 0;
   color: var(--dim);
   font-family: var(--font-mono);
-  font-size: 9px;
+  font-size: 12px;
   opacity: var(--cue-o);
 }
 
@@ -2013,7 +2012,7 @@ a.package-row:hover {
   .mobile-actions span:first-child {
     border-color: var(--violet);
     background: var(--violet);
-    color: #111014;
+    color: var(--ink);
     font-weight: 650;
   }
 
