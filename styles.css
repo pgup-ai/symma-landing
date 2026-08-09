@@ -1357,7 +1357,7 @@ section[id] {
 
 .agent-logos {
   display: flex;
-  width: 162px;
+  width: 145px;
   border: 0;
 }
 
@@ -2094,7 +2094,7 @@ a.package-row:hover {
   }
 
   .route-machine {
-    grid-template-columns: 162px 1fr;
+    grid-template-columns: 145px 1fr;
   }
 
   .trust-facts {
@@ -2251,7 +2251,7 @@ a.package-row:hover {
   }
 
   .agent-logos {
-    width: 162px;
+    width: 145px;
   }
 
   .trust-facts {
