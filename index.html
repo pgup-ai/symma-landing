@@ -86,10 +86,10 @@
               <div class="step-copies" aria-live="polite">
                 <article class="step-copy" data-step-copy="0">
                   <span class="step-number">Start privately</span>
-                  <h2>Give the task its own DM thread.</h2>
+                  <h2>One DM starts the session.</h2>
                   <p>
-                    Start in Symma’s DM, or bring in context from a channel. Either way, the work
-                    begins in a private thread with you.
+                    Send Symma a DM, or bring in context from a channel. The first top-level DM
+                    becomes the root. Every turn after it stays inside the root’s thread.
                   </p>
                 </article>
                 <article class="step-copy" data-step-copy="1">
@@ -131,7 +131,7 @@
               <div
                 class="slack-demo slack-demo-desktop"
                 role="img"
-                aria-label="A five-stage Symma conversation in Slack: a private DM thread receives channel context, uses an approved project and attachment, shows agent progress, resumes for a follow-up, and offers the reviewed answer for explicit sharing."
+                aria-label="A five-stage Symma conversation in Slack: one top-level private DM becomes the conversation root, and every later user and bot turn stays in its thread while the user sets scope, watches progress, follows up, and reviews the answer before sharing."
               >
                 <div class="demo-chrome">
                   <span class="chrome-dot"></span>
@@ -156,14 +156,19 @@
                         <strong>symma</strong>
                         <span>Direct message</span>
                       </div>
-                      <span class="thread-session">1 thread · 1 conversation</span>
+                      <span class="thread-session">1 DM root · 1 session</span>
+                    </div>
+
+                    <div class="thread-context-bar">
+                      <span>Thread view</span>
+                      <strong>Every reply stays under the DM root</strong>
                     </div>
 
                     <div class="thread-viewport">
                       <div class="thread-track">
                         <div class="thread-day">Today</div>
 
-                        <article class="demo-message message-context">
+                        <article class="demo-message message-context message-root">
                           <span class="demo-avatar symma-avatar" aria-hidden="true">s</span>
                           <div class="message-body">
                             <div class="message-author">
@@ -178,135 +183,146 @@
                             <blockquote>
                               “Checkout times out after the retry. Can someone look at this?”
                             </blockquote>
-                          </div>
-                        </article>
-
-                        <article class="demo-message message-request">
-                          <span class="demo-avatar user-avatar" aria-hidden="true">J</span>
-                          <div class="message-body">
-                            <div class="message-author">
-                              <strong>You</strong>
-                              <span>10:15</span>
-                            </div>
-                            <p>
-                              Find the cause. Use the screenshot and check the payments project.
-                            </p>
-                            <div class="attachment">
-                              <span class="attachment-preview" aria-hidden="true">
-                                <i></i><i></i><i></i>
-                              </span>
-                              <span>
-                                <strong>checkout-error.png</strong>
-                                <small>PNG · 184 kB</small>
-                              </span>
-                              <b>image</b>
+                            <div class="thread-root-meta">
+                              <span>Conversation root</span>
+                              <strong>Open thread</strong>
                             </div>
                           </div>
                         </article>
 
-                        <article class="demo-message message-scope">
-                          <span class="demo-avatar symma-avatar" aria-hidden="true">s</span>
-                          <div class="message-body">
-                            <div class="message-author">
-                              <strong>symma</strong>
-                              <span>10:15</span>
-                              <i>APP</i>
-                            </div>
-                            <p>On it. Reading <b>checkout-error.png</b>.</p>
-                            <div class="scope-strip">
-                              <span><small>Project</small>payments-api</span>
-                              <span><small>Access</small>read and edit</span>
-                              <span><small>Model</small>gpt-5.6 sol</span>
-                              <span><small>Effort</small>high</span>
-                            </div>
+                        <div class="thread-replies">
+                          <div class="thread-replies-label">
+                            <span>Thread</span>
+                            <strong>Replies to the DM above</strong>
                           </div>
-                        </article>
 
-                        <article class="demo-message message-working">
-                          <span class="demo-avatar symma-avatar" aria-hidden="true">s</span>
-                          <div class="message-body">
-                            <div class="message-author">
-                              <strong>symma</strong>
-                              <span>10:16</span>
-                              <i>APP</i>
+                          <article class="demo-message message-request">
+                            <span class="demo-avatar user-avatar" aria-hidden="true">J</span>
+                            <div class="message-body">
+                              <div class="message-author">
+                                <strong>You</strong>
+                                <span>10:15</span>
+                              </div>
+                              <p>
+                                Find the cause. Use the screenshot and check the payments project.
+                              </p>
+                              <div class="attachment">
+                                <span class="attachment-preview" aria-hidden="true">
+                                  <i></i><i></i><i></i>
+                                </span>
+                                <span>
+                                  <strong>checkout-error.png</strong>
+                                  <small>PNG · 184 kB</small>
+                                </span>
+                                <b>image</b>
+                              </div>
                             </div>
-                            <p class="working-line">
-                              <span class="working-mark" aria-hidden="true"></span>
-                              Still working
-                            </p>
-                            <ol class="work-steps">
-                              <li class="is-done">Read the retry handler</li>
-                              <li class="is-done">Compared the screenshot with recent logs</li>
-                              <li class="is-current">Tracing where the session is replaced</li>
-                            </ol>
-                          </div>
-                        </article>
+                          </article>
 
-                        <article class="demo-message message-first-answer">
-                          <span class="demo-avatar symma-avatar" aria-hidden="true">s</span>
-                          <div class="message-body">
-                            <div class="message-author">
-                              <strong>symma</strong>
-                              <span>10:18</span>
-                              <i>APP</i>
+                          <article class="demo-message message-scope">
+                            <span class="demo-avatar symma-avatar" aria-hidden="true">s</span>
+                            <div class="message-body">
+                              <div class="message-author">
+                                <strong>symma</strong>
+                                <span>10:15</span>
+                                <i>APP</i>
+                              </div>
+                              <p>On it. Reading <b>checkout-error.png</b>.</p>
+                              <div class="scope-strip">
+                                <span><small>Project</small>payments-api</span>
+                                <span><small>Access</small>read and edit</span>
+                                <span><small>Model</small>gpt-5.6 sol</span>
+                                <span><small>Effort</small>high</span>
+                              </div>
                             </div>
-                            <p>
-                              The retry creates a new checkout session but the next request still
-                              sends the old session ID. I found the handoff that needs to change.
-                            </p>
-                          </div>
-                        </article>
+                          </article>
 
-                        <article class="demo-message message-followup">
-                          <span class="demo-avatar user-avatar" aria-hidden="true">J</span>
-                          <div class="message-body">
-                            <div class="message-author">
-                              <strong>You</strong>
-                              <span>10:19</span>
+                          <article class="demo-message message-working">
+                            <span class="demo-avatar symma-avatar" aria-hidden="true">s</span>
+                            <div class="message-body">
+                              <div class="message-author">
+                                <strong>symma</strong>
+                                <span>10:16</span>
+                                <i>APP</i>
+                              </div>
+                              <p class="working-line">
+                                <span class="working-mark" aria-hidden="true"></span>
+                                Still working
+                              </p>
+                              <ol class="work-steps">
+                                <li class="is-done">Read the retry handler</li>
+                                <li class="is-done">Compared the screenshot with recent logs</li>
+                                <li class="is-current">Tracing where the session is replaced</li>
+                              </ol>
                             </div>
-                            <p>
-                              Check the fix against the failed test, then give me a short update.
-                            </p>
-                          </div>
-                        </article>
+                          </article>
 
-                        <article class="demo-message message-resume">
-                          <span class="demo-avatar symma-avatar" aria-hidden="true">s</span>
-                          <div class="message-body">
-                            <div class="message-author">
-                              <strong>symma</strong>
-                              <span>10:19</span>
-                              <i>APP</i>
+                          <article class="demo-message message-first-answer">
+                            <span class="demo-avatar symma-avatar" aria-hidden="true">s</span>
+                            <div class="message-body">
+                              <div class="message-author">
+                                <strong>symma</strong>
+                                <span>10:18</span>
+                                <i>APP</i>
+                              </div>
+                              <p>
+                                The retry creates a new checkout session but the next request still
+                                sends the old session ID. I found the handoff that needs to change.
+                              </p>
                             </div>
-                            <p>On it. Picking up where it left off, if it still can…</p>
-                            <span class="resume-note">same private conversation</span>
-                          </div>
-                        </article>
+                          </article>
 
-                        <article class="demo-message message-final">
-                          <span class="demo-avatar symma-avatar" aria-hidden="true">s</span>
-                          <div class="message-body">
-                            <div class="message-author">
-                              <strong>symma</strong>
-                              <span>10:22</span>
-                              <i>APP</i>
+                          <article class="demo-message message-followup">
+                            <span class="demo-avatar user-avatar" aria-hidden="true">J</span>
+                            <div class="message-body">
+                              <div class="message-author">
+                                <strong>You</strong>
+                                <span>10:19</span>
+                              </div>
+                              <p>
+                                Check the fix against the failed test, then give me a short update.
+                              </p>
                             </div>
-                            <p>
-                              <b>Ready to share:</b> Checkout retries kept using an expired session.
-                              The fix carries the replacement session forward, and the failed retry
-                              test now passes.
-                            </p>
-                            <div class="answer-actions">
-                              <span class="share-action">Share to thread</span>
-                              <span class="private-action">Keep private</span>
+                          </article>
+
+                          <article class="demo-message message-resume">
+                            <span class="demo-avatar symma-avatar" aria-hidden="true">s</span>
+                            <div class="message-body">
+                              <div class="message-author">
+                                <strong>symma</strong>
+                                <span>10:19</span>
+                                <i>APP</i>
+                              </div>
+                              <p>On it. Picking up where it left off, if it still can…</p>
+                              <span class="resume-note">same DM thread · same session</span>
                             </div>
-                          </div>
-                        </article>
+                          </article>
+
+                          <article class="demo-message message-final">
+                            <span class="demo-avatar symma-avatar" aria-hidden="true">s</span>
+                            <div class="message-body">
+                              <div class="message-author">
+                                <strong>symma</strong>
+                                <span>10:22</span>
+                                <i>APP</i>
+                              </div>
+                              <p>
+                                <b>Ready to share:</b> Checkout retries kept using an expired
+                                session. The fix carries the replacement session forward, and the
+                                failed retry test now passes.
+                              </p>
+                              <div class="answer-actions">
+                                <span class="share-action">Share to thread</span>
+                                <span class="private-action">Keep private</span>
+                              </div>
+                            </div>
+                          </article>
+                        </div>
                       </div>
                     </div>
 
                     <div class="demo-composer" aria-hidden="true">
-                      <span>Reply in this conversation…</span>
+                      <span>Reply in thread…</span>
                       <i>↵</i>
                     </div>
                   </div>
@@ -316,25 +332,31 @@
               <div
                 class="slack-demo slack-demo-mobile"
                 role="img"
-                aria-label="A mobile five-stage Symma conversation showing a private DM, project and agent controls, live progress, session continuation, and an answer that remains private until shared."
+                aria-label="A mobile five-stage Symma conversation showing one top-level DM as the root and all later user and bot turns inside that DM's thread."
               >
                 <div class="mobile-demo-header">
                   <span class="mobile-back">‹</span>
                   <span class="mobile-symma-mark">s</span>
                   <span>
                     <strong>symma</strong>
-                    <small>private DM</small>
+                    <small>Direct message</small>
                   </span>
                   <i>•••</i>
                 </div>
                 <div class="mobile-scene mobile-scene-start">
-                  <span class="scene-label">Private thread</span>
-                  <strong>Picked up from #customer-help</strong>
-                  <p>Nothing goes back to the channel unless you say so.</p>
-                  <div class="mobile-ask">Find the cause in the payments project.</div>
+                  <span class="scene-label">Top-level DM · conversation root</span>
+                  <div class="mobile-root-message">
+                    <strong>Picked up from #customer-help</strong>
+                    <p>Nothing goes back to the channel unless you say so.</p>
+                    <span>Open thread</span>
+                  </div>
+                  <div class="mobile-thread-preview">
+                    <span>Thread</span>
+                    <div class="mobile-ask">Find the cause in the payments project.</div>
+                  </div>
                 </div>
                 <div class="mobile-scene mobile-scene-scope">
-                  <span class="scene-label">Your controls</span>
+                  <span class="scene-label">DM root’s thread · controls</span>
                   <strong>checkout-error.png</strong>
                   <div class="mobile-control-grid">
                     <span><small>Project</small>payments-api</span>
@@ -344,19 +366,21 @@
                   </div>
                 </div>
                 <div class="mobile-scene mobile-scene-work">
-                  <span class="scene-label scene-live"><i></i> Agent working</span>
+                  <span class="scene-label scene-live"
+                    ><i></i> DM root’s thread · agent working</span
+                  >
                   <strong>Tracing where the session is replaced</strong>
                   <p>Read retry handler · compared screenshot · checking logs</p>
                 </div>
                 <div class="mobile-scene mobile-scene-follow">
-                  <span class="scene-label">Same conversation</span>
+                  <span class="scene-label">DM root’s thread · same session</span>
                   <div class="mobile-ask">
                     Check the fix against the test, then make the update shorter.
                   </div>
                   <p>Picking up where it left off, if it still can…</p>
                 </div>
                 <div class="mobile-scene mobile-scene-final">
-                  <span class="scene-label">Reviewed answer</span>
+                  <span class="scene-label">DM root’s thread · reviewed answer</span>
                   <strong>Checkout retries kept using an expired session.</strong>
                   <p>The fix now carries the replacement session forward.</p>
                   <div class="mobile-actions">

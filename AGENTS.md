@@ -13,8 +13,8 @@ Write for a curious Slack user first and a protocol implementer second.
 
 The page should explain this sequence in ordinary language:
 
-1. Ask from an existing Slack conversation.
-2. Continue the task in a private DM.
+1. Ask from an existing Slack conversation or send Symma a top-level DM.
+2. Use that one top-level DM as the private root; every later turn stays in its thread.
 3. Symma finds the machine paired to that person.
 4. The person's existing agent works in an approved project.
 5. The person reviews the result and chooses whether to share it.
@@ -22,6 +22,8 @@ The page should explain this sequence in ordinary language:
 Keep these promises clear:
 
 - One shared Slack app can serve many people, but each person reaches only their own agent.
+- One top-level DM identifies the conversation; acknowledgements, progress, answers, and follow-up
+  questions all stay in that DM's thread.
 - Provider credentials, project files, and agent execution stay on the connected machine.
 - A Slack invocation is not permission to publish the answer. Work begins privately.
 - A user chooses the machines, agents, and project folders Slack may expose.

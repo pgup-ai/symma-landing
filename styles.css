@@ -555,7 +555,7 @@ button:focus-visible {
 
 .demo-thread {
   display: grid;
-  grid-template-rows: 58px 1fr 48px;
+  grid-template-rows: 58px 28px 1fr 48px;
   min-width: 0;
   min-height: 0;
   height: 100%;
@@ -593,6 +593,28 @@ button:focus-visible {
   color: var(--muted) !important;
   font-family: var(--font-mono);
   font-size: 9px !important;
+}
+
+.thread-context-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 20px;
+  border-bottom: 1px solid var(--border);
+  background: #101116;
+  color: var(--dim);
+  font-family: var(--font-mono);
+  font-size: 8px;
+}
+
+.thread-context-bar span {
+  color: var(--violet-bright);
+  text-transform: uppercase;
+}
+
+.thread-context-bar strong {
+  font-size: inherit;
+  font-weight: 400;
 }
 
 .thread-viewport {
@@ -633,6 +655,66 @@ button:focus-visible {
   gap: 10px;
   margin-bottom: 20px;
   transition: none;
+}
+
+.message-root {
+  margin-bottom: 0;
+  padding-bottom: 16px;
+}
+
+.thread-root-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+  color: var(--dim);
+  font-family: var(--font-mono);
+  font-size: 8px;
+}
+
+.thread-root-meta strong {
+  color: var(--violet-bright);
+  font-size: inherit;
+  font-weight: 500;
+}
+
+.thread-replies {
+  position: relative;
+  margin-left: 15px;
+  padding: 14px 0 1px 25px;
+  border-left: 1px solid rgba(159, 139, 234, 0.32);
+}
+
+.thread-replies::before {
+  position: absolute;
+  content: '';
+  top: -4px;
+  left: -3px;
+  width: 5px;
+  height: 5px;
+  border: 1px solid var(--violet-deep);
+  border-radius: 50%;
+  background: var(--surface);
+}
+
+.thread-replies-label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 15px;
+  color: var(--dim);
+  font-family: var(--font-mono);
+  font-size: 8px;
+}
+
+.thread-replies-label span {
+  color: var(--violet-bright);
+  text-transform: uppercase;
+}
+
+.thread-replies-label strong {
+  font-size: inherit;
+  font-weight: 400;
 }
 
 .demo-avatar {
@@ -775,7 +857,7 @@ button:focus-visible {
 }
 
 .message-scope {
-  opacity: var(--scope-o);
+  opacity: min(var(--scope-o), calc(1 - var(--work-o)));
   transform: translateY(calc((1 - var(--scope-o)) * 12px));
 }
 
@@ -810,10 +892,14 @@ button:focus-visible {
   text-transform: uppercase;
 }
 
-.message-working,
-.message-first-answer {
-  opacity: var(--work-o);
+.message-working {
+  opacity: min(var(--work-o), calc(1 - var(--follow-o)));
   transform: translateY(calc((1 - var(--work-o)) * 12px));
+}
+
+.message-first-answer {
+  opacity: var(--follow-o);
+  transform: translateY(calc((1 - var(--follow-o)) * 12px));
 }
 
 .working-line {
@@ -1745,6 +1831,16 @@ a.package-row:hover {
     transform: translateY(10px);
   }
 
+  .mobile-scene:not(.mobile-scene-start)::before {
+    position: absolute;
+    content: '';
+    top: 68px;
+    bottom: 22px;
+    left: 17px;
+    width: 1px;
+    background: rgba(159, 139, 234, 0.3);
+  }
+
   .mobile-scene-start {
     opacity: max(var(--hero-o), var(--s1-o));
     transform: translateY(var(--s1-y, 0));
@@ -1776,6 +1872,57 @@ a.package-row:hover {
     font-family: var(--font-mono);
     font-size: 9px;
     text-transform: uppercase;
+  }
+
+  .mobile-root-message {
+    padding: 14px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--surface-2);
+  }
+
+  .mobile-root-message strong,
+  .mobile-root-message p,
+  .mobile-root-message span {
+    display: block;
+  }
+
+  .mobile-root-message strong {
+    color: var(--text);
+    font-size: 16px;
+    font-weight: 580;
+  }
+
+  .mobile-root-message p {
+    margin: 7px 0 0;
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.45;
+  }
+
+  .mobile-root-message span {
+    margin-top: 10px;
+    color: var(--violet-bright);
+    font-family: var(--font-mono);
+    font-size: 8px;
+  }
+
+  .mobile-thread-preview {
+    margin-left: 17px;
+    padding: 12px 0 0 17px;
+    border-left: 1px solid rgba(159, 139, 234, 0.3);
+  }
+
+  .mobile-thread-preview > span {
+    color: var(--violet-bright);
+    font-family: var(--font-mono);
+    font-size: 8px;
+    text-transform: uppercase;
+  }
+
+  .mobile-thread-preview .mobile-ask {
+    max-width: 100%;
+    margin-top: 8px;
   }
 
   .mobile-scene > strong {
