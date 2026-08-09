@@ -253,6 +253,10 @@ button:focus-visible {
   --icon: url('./assets/integrations/cursor.svg');
 }
 
+.amp-icon {
+  --icon: url('./assets/integrations/amp.svg');
+}
+
 .goose-icon {
   --icon: url('./assets/integrations/goose.svg');
 }
@@ -1353,7 +1357,7 @@ section[id] {
 
 .agent-logos {
   display: flex;
-  width: 145px;
+  width: 162px;
   border: 0;
 }
 
@@ -2090,7 +2094,7 @@ a.package-row:hover {
   }
 
   .route-machine {
-    grid-template-columns: 145px 1fr;
+    grid-template-columns: 162px 1fr;
   }
 
   .trust-facts {
@@ -2247,7 +2251,7 @@ a.package-row:hover {
   }
 
   .agent-logos {
-    width: 145px;
+    width: 162px;
   }
 
   .trust-facts {
