@@ -28,9 +28,13 @@ Keep these promises clear:
 - The hosted service relays the conversation and sees that relayed content; do not imply
   end-to-end secrecy that the architecture does not provide.
 
-The agent connection works today. Personal Slack pairing and the polished Slack experience are
-planned. Preserve that distinction anywhere setup or availability is discussed. Never publish an
-install command, product control, or status claim that does not exist in the product.
+The owner-scoped Slack path works today: pairing, private DM-thread conversations, session
+reattachment with transcript recovery, bounded text and image attachments, progress narration,
+workspace and access-mode controls, model-and-effort selection where the agent offers them, and
+explicit share-back. The current Slack app is an operator-installed internal Socket Mode app, not a
+public Marketplace product. Preserve that distinction anywhere setup or availability is discussed.
+Never publish an install command, product control, or status claim that does not exist in the
+product.
 
 ## Information order
 
@@ -39,9 +43,9 @@ Keep the page progressive:
 1. Outcome: use your own agent from Slack.
 2. Five-step human story.
 3. Personal ownership, credentials, and project boundaries.
-4. Planned connection flow.
+4. Current connection flow and operating scope.
 5. Trust boundaries.
-6. Current packages and roadmap for technical readers.
+6. Current packages and operating limits for technical readers.
 7. GitHub call to action.
 
 Do not lead with ACP, gateways, endpoints, signed envelopes, tenancy, or other implementation

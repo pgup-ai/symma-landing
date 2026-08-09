@@ -2,6 +2,8 @@ const root = document.documentElement;
 const body = document.body;
 const story = document.querySelector('.story');
 const header = document.querySelector('[data-header]');
+const progressLabel = document.querySelector('.progress-label');
+const progressButtons = [...document.querySelectorAll('[data-jump]')];
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 const motionOverride = new URLSearchParams(window.location.search).get('motion');
 const calmMotion = () => reducedMotion.matches || motionOverride === 'calm';
@@ -16,11 +18,11 @@ const state = {
 };
 
 const stages = [
-  { start: 0.07, end: 0.24, label: 'Ask in Slack', status: 'message received' },
-  { start: 0.24, end: 0.41, label: 'Private DM', status: 'moved to private DM' },
-  { start: 0.41, end: 0.58, label: 'Find your agent', status: 'Alice matched' },
-  { start: 0.58, end: 0.76, label: 'Work on your machine', status: 'agent working' },
-  { start: 0.76, end: 1, label: 'Review before sharing', status: 'answer ready' },
+  { start: 0.07, end: 0.24, label: 'Start privately' },
+  { start: 0.24, end: 0.41, label: 'Set the scope' },
+  { start: 0.41, end: 0.58, label: 'Watch the work move' },
+  { start: 0.58, end: 0.76, label: 'Keep going' },
+  { start: 0.76, end: 1, label: 'Review before sharing' },
 ];
 
 const clamp = (value, min = 0, max = 1) => Math.min(max, Math.max(min, value));
@@ -41,13 +43,6 @@ const setVariable = (name, value) => {
   root.style.setProperty(name, value);
 };
 
-const measure = () => {
-  const rect = story.getBoundingClientRect();
-  state.storyTop = window.scrollY + rect.top;
-  state.travel = Math.max(1, story.offsetHeight - window.innerHeight);
-  updateTarget();
-};
-
 const updateHeader = () => {
   setVariable('--header-rule', window.scrollY > 12 ? '1' : '0');
   header.toggleAttribute('data-scrolled', window.scrollY > 12);
@@ -59,50 +54,35 @@ const updateTarget = () => {
   requestFrame();
 };
 
+const measure = () => {
+  const rect = story.getBoundingClientRect();
+  state.storyTop = window.scrollY + rect.top;
+  state.travel = Math.max(1, story.offsetHeight - window.innerHeight);
+  updateTarget();
+};
+
 const setStageText = (stage) => {
   if (stage === state.stage) return;
   state.stage = stage;
   body.dataset.stage = String(stage);
-
-  const current = stages[stage];
-  document.querySelector('.progress-label').textContent = current.label;
-  document.querySelector('.status-copy').textContent = current.status;
+  progressLabel.textContent = stages[stage].label;
+  progressButtons.forEach((button, index) => {
+    if (index === stage) button.setAttribute('aria-current', 'step');
+    else button.removeAttribute('aria-current');
+  });
 };
 
-const packetPosition = (progress) => {
-  if (progress < 0.42) {
-    const amount = smooth(progress, 0.08, 0.4);
-    return {
-      x: mix(29, 50.5, amount),
-      y: 47,
-      mobileY: mix(20, 46, amount),
-      rotation: mix(-10, 8, amount),
-    };
-  }
-
-  if (progress < 0.75) {
-    const amount = smooth(progress, 0.43, 0.72);
-    return {
-      x: mix(50.5, 69, amount),
-      y: mix(47, 31, amount),
-      mobileY: mix(46, 70, amount),
-      rotation: mix(8, 18, amount),
-    };
-  }
-
-  const amount = smooth(progress, 0.76, 0.96);
-  return {
-    x: mix(69, 29, amount),
-    y: mix(31, 47, amount),
-    mobileY: mix(70, 91, amount),
-    rotation: mix(18, 188, amount),
-  };
+const threadPosition = (progress) => {
+  if (progress < 0.41) return mix(0, -110, smooth(progress, 0.2, 0.39));
+  if (progress < 0.58) return mix(-110, -265, smooth(progress, 0.42, 0.56));
+  if (progress < 0.76) return mix(-265, -465, smooth(progress, 0.59, 0.74));
+  return mix(-465, -625, smooth(progress, 0.77, 0.96));
 };
 
 const apply = (progress) => {
   const heroOut = smooth(progress, 0.018, 0.095);
   setVariable('--hero-o', (1 - heroOut).toFixed(4));
-  setVariable('--hero-y', `${(-heroOut * 28).toFixed(2)}px`);
+  setVariable('--hero-y', -heroOut * 28 + 'px');
   setVariable('--steps-o', smooth(progress, 0.055, 0.095).toFixed(4));
   setVariable('--rail-o', smooth(progress, 0.035, 0.095).toFixed(4));
   setVariable('--cue-o', (1 - smooth(progress, 0.018, 0.075)).toFixed(4));
@@ -111,33 +91,18 @@ const apply = (progress) => {
     const opacity = bandOpacity(progress, stage.start, stage.end);
     const entering = smooth(progress, stage.start, stage.start + 0.04);
     const leaving = stage.end === 1 ? 0 : smooth(progress, stage.end - 0.04, stage.end);
-    setVariable(`--s${index + 1}-o`, opacity.toFixed(4));
-    setVariable(`--s${index + 1}-y`, `${(18 * (1 - entering) - leaving * 12).toFixed(2)}px`);
+    setVariable('--s' + (index + 1) + '-o', opacity.toFixed(4));
+    setVariable('--s' + (index + 1) + '-y', 16 * (1 - entering) - leaving * 10 + 'px');
 
     const fill = clamp((progress - stage.start) / (stage.end - stage.start)) * 100;
-    setVariable(`--rf${index + 1}`, `${fill.toFixed(2)}%`);
+    setVariable('--rf' + (index + 1), fill.toFixed(2) + '%');
   });
 
-  const draft = smooth(progress, 0.76, 0.84);
-  const privateEntry = smooth(progress, 0.22, 0.32);
-  const privateThread = privateEntry * (1 - draft);
-  const owner = smooth(progress, 0.4, 0.47);
-  const bob = smooth(progress, 0.43, 0.49);
-  const running = smooth(progress, 0.57, 0.68);
-
-  setVariable('--dm-o', privateThread.toFixed(4));
-  setVariable('--private-card-o', privateEntry.toFixed(4));
-  setVariable('--owner-o', owner.toFixed(4));
-  setVariable('--bob-o', bob.toFixed(4));
-  setVariable('--run-o', running.toFixed(4));
-  setVariable('--draft-o', draft.toFixed(4));
-  setVariable('--packet-o', (0.28 + smooth(progress, 0.025, 0.09) * 0.72).toFixed(4));
-
-  const packet = packetPosition(progress);
-  setVariable('--packet-x', packet.x.toFixed(3));
-  setVariable('--packet-y', packet.y.toFixed(3));
-  setVariable('--mpacket-y', packet.mobileY.toFixed(3));
-  setVariable('--packet-r', `${packet.rotation.toFixed(2)}deg`);
+  setVariable('--scope-o', smooth(progress, 0.24, 0.32).toFixed(4));
+  setVariable('--work-o', smooth(progress, 0.41, 0.49).toFixed(4));
+  setVariable('--follow-o', smooth(progress, 0.58, 0.66).toFixed(4));
+  setVariable('--final-o', smooth(progress, 0.76, 0.84).toFixed(4));
+  setVariable('--thread-y', threadPosition(progress).toFixed(2) + 'px');
 
   let stageIndex = 0;
   stages.forEach((stage, index) => {
@@ -176,11 +141,12 @@ const applyMotionPreference = () => {
     state.frame = 0;
     state.current = state.target;
     setStageText(4);
-    setVariable('--owner-o', '1');
-    setVariable('--bob-o', '1');
-    setVariable('--run-o', '1');
-    setVariable('--draft-o', '1');
-    setVariable('--header-rule', window.scrollY > 12 ? '1' : '0');
+    setVariable('--scope-o', '1');
+    setVariable('--work-o', '1');
+    setVariable('--follow-o', '1');
+    setVariable('--final-o', '1');
+    setVariable('--thread-y', '0px');
+    updateHeader();
     return;
   }
 
@@ -188,7 +154,7 @@ const applyMotionPreference = () => {
   requestFrame();
 };
 
-document.querySelectorAll('[data-jump]').forEach((button) => {
+progressButtons.forEach((button) => {
   button.addEventListener('click', () => {
     const index = Number(button.dataset.jump);
     const stage = stages[index];
