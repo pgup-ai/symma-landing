@@ -209,7 +209,6 @@ button:focus-visible {
   background: rgba(159, 139, 234, 0.08);
 }
 
-.nav-cta svg,
 .button svg {
   width: 16px;
   height: 16px;
@@ -218,6 +217,36 @@ button:focus-visible {
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-width: 1.5;
+}
+
+.brand-icon {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  flex: none;
+  background: currentColor;
+  -webkit-mask: var(--icon) center / contain no-repeat;
+  mask: var(--icon) center / contain no-repeat;
+}
+
+.github-icon {
+  --icon: url('./assets/integrations/github.svg');
+}
+
+.x-icon {
+  --icon: url('./assets/integrations/x.svg');
+}
+
+.codex-icon {
+  --icon: url('./assets/integrations/codex.svg');
+}
+
+.claude-icon {
+  --icon: url('./assets/integrations/claude.svg');
+}
+
+.opencode-icon {
+  --icon: url('./assets/integrations/opencode.svg');
 }
 
 .header-rule {
@@ -1301,32 +1330,43 @@ section[id] {
   background: url('./brand/app-icon/slack-avatar.svg') center / cover no-repeat;
 }
 
-.slack-symbol {
-  position: relative;
-}
-
-.slack-symbol i {
-  position: absolute;
-  width: 4px;
-  height: 11px;
-  border-radius: 2px;
+.slack-symbol::before {
+  width: 20px;
+  height: 20px;
   background: var(--violet);
+  content: '';
+  -webkit-mask: url('./assets/integrations/slack.svg') center / 20px no-repeat;
+  mask: url('./assets/integrations/slack.svg') center / 20px no-repeat;
 }
 
-.slack-symbol i:nth-child(1) {
-  transform: translate(-4px, -3px);
+.agent-logos {
+  display: flex;
+  width: 68px;
+  border: 0;
 }
 
-.slack-symbol i:nth-child(2) {
-  transform: translate(4px, 3px);
+.agent-logo {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  flex: none;
+  border: 1px solid rgba(159, 139, 234, 0.36);
+  border-radius: 50%;
+  background-color: var(--surface-3);
 }
 
-.slack-symbol i:nth-child(3) {
-  transform: translate(3px, -4px) rotate(90deg);
+.agent-logo + .agent-logo {
+  margin-left: -7px;
 }
 
-.slack-symbol i:nth-child(4) {
-  transform: translate(-3px, 4px) rotate(90deg);
+.agent-logo::before {
+  width: 15px;
+  height: 15px;
+  margin: auto;
+  background: var(--violet-bright);
+  content: '';
+  -webkit-mask: var(--icon) center / contain no-repeat;
+  mask: var(--icon) center / contain no-repeat;
 }
 
 .route-node small {
@@ -1518,13 +1558,33 @@ a.package-row:hover {
 
 .footer-meta {
   display: flex;
+  align-items: center;
   gap: 24px;
   color: var(--dim);
   font-family: var(--font-mono);
   font-size: 10px;
 }
 
-.footer-meta a:hover {
+.footer-links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.footer-links a {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  color: var(--muted);
+  transition:
+    background 160ms ease,
+    color 160ms ease;
+}
+
+.footer-links a:hover {
+  background: rgba(159, 139, 234, 0.08);
   color: var(--text);
 }
 
@@ -2007,6 +2067,10 @@ a.package-row:hover {
     margin: 0;
   }
 
+  .route-machine {
+    grid-template-columns: 68px 1fr;
+  }
+
   .trust-facts {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -2150,9 +2214,17 @@ a.package-row:hover {
     padding: 15px;
   }
 
+  .route-machine {
+    grid-template-columns: 68px 1fr;
+  }
+
   .route-symbol {
     width: 32px;
     height: 32px;
+  }
+
+  .agent-logos {
+    width: 68px;
   }
 
   .trust-facts {
@@ -2210,6 +2282,11 @@ a.package-row:hover {
     align-items: flex-start;
     flex-direction: column;
     gap: 12px;
+  }
+
+  .footer-links a {
+    width: 44px;
+    height: 44px;
   }
 }
 
