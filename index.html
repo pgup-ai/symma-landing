@@ -15,9 +15,15 @@
       content="Ask privately, watch your own agent work, and share only the answer you trust."
     />
     <meta property="og:url" content="https://symma.dev/" />
-    <meta name="twitter:card" content="summary" />
+    <meta property="og:image" content="https://symma.dev/brand/social/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="Symma" />
+    <meta name="twitter:card" content="summary_large_image" />
     <link rel="canonical" href="https://symma.dev/" />
-    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/brand/icons/favicon.svg" type="image/svg+xml" />
+    <link rel="alternate icon" sizes="32x32" href="/brand/icons/favicon-32.png" />
+    <link rel="apple-touch-icon" href="/brand/icons/apple-touch-icon-180.png" />
     <link rel="stylesheet" href="./styles.css" />
     <script src="./landing.js" defer></script>
     <title>Symma | Your agent, in Slack</title>
@@ -28,15 +34,11 @@
     <header class="site-header" data-header>
       <nav class="nav shell" aria-label="Primary navigation">
         <a class="wordmark" href="#top" aria-label="Symma home">
-          <span class="wordmark-mark" aria-hidden="true">
-            <span></span>
-            <span></span>
-          </span>
-          <span>symma</span>
+          <span class="wordmark-mark" aria-hidden="true"></span>
+          <span>Symma</span>
         </a>
 
         <div class="nav-links">
-          <a href="#experience">Experience</a>
           <a href="#ownership">Your controls</a>
           <a href="#trust">Trust</a>
           <a href="#foundation">Foundation</a>
@@ -44,9 +46,7 @@
 
         <a class="nav-cta" href="https://github.com/pgup-ai/symma" target="_blank" rel="noreferrer">
           GitHub
-          <svg viewBox="0 0 16 16" aria-hidden="true">
-            <path d="M4 12 12 4M6 4h6v6" />
-          </svg>
+          <span class="brand-icon github-icon" aria-hidden="true"></span>
         </a>
       </nav>
       <div class="header-rule" aria-hidden="true"></div>
@@ -58,80 +58,78 @@
           <div class="story-grid shell">
             <div class="story-copy">
               <div class="hero-copy">
-                <div class="eyebrow">Your agent, from Slack</div>
                 <h1 id="hero-title">
-                  Work in private.<br />
-                  <span>Share the answer.</span>
+                  <span class="hero-line">Your agent. Your laptop.</span>
+                  <span class="hero-line hero-line-accent">Now reachable from Slack.</span>
                 </h1>
                 <p class="hero-lede">
-                  Ask the coding agent on your own computer, watch the task move, and keep refining
-                  it in a private DM until the result is ready for everyone else.
+                  Ask from Slack and the coding agent already running on your own computer picks it
+                  up — your login, your files, your approved projects. It works privately until you
+                  decide the answer is worth sharing.
+                </p>
+                <p class="agent-support">
+                  Works with the agent you already run — Claude, Codex, Cursor, Devin, Gemini, Kilo,
+                  or OpenCode.
                 </p>
                 <div class="hero-actions">
-                  <a
-                    class="button button-primary"
-                    href="https://github.com/pgup-ai/symma"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    View on GitHub
-                    <svg viewBox="0 0 16 16" aria-hidden="true">
-                      <path d="M4 12 12 4M6 4h6v6" />
-                    </svg>
-                  </a>
-                  <a class="button button-secondary" href="#experience"> Why work privately? </a>
+                  <a class="button button-secondary" href="#trust">Why work privately?</a>
                 </div>
               </div>
 
-              <div class="step-copies" aria-live="polite">
-                <article class="step-copy" data-step-copy="0">
+              <ol class="step-copies">
+                <li class="step-copy" data-step-copy="0">
                   <span class="step-number">Start privately</span>
-                  <h2>One DM starts the session.</h2>
+                  <h2>A channel question starts private work.</h2>
                   <p>
-                    Send Symma a DM, or bring in context from a channel. The first top-level DM
-                    becomes the root. Every turn after it stays inside the root’s thread.
+                    Mention Symma in the Slack thread that needs help. It opens one top-level DM
+                    with the context; every later turn stays in that DM’s thread. A direct DM works
+                    too, but stays private because there is no source thread to return to.
                   </p>
-                </article>
-                <article class="step-copy" data-step-copy="1">
-                  <span class="step-number">Set the scope</span>
-                  <h2>Choose what the agent can use.</h2>
+                </li>
+                <li class="step-copy" data-step-copy="1">
+                  <span class="step-number">See the scope</span>
+                  <h2>It says what it is touching before it starts.</h2>
                   <p>
-                    Name an approved project, pick an access mode and model, and attach the
-                    screenshot or file the question depends on.
+                    Symma names the project it opened and the permission level it is using, then
+                    gets to work. Attach a screenshot or a file and it reads that too. You can
+                    change the permission level for the next message. If your agent offers model
+                    choices, you can change that too.
                   </p>
-                </article>
-                <article class="step-copy" data-step-copy="2">
-                  <span class="step-number">Watch the work move</span>
-                  <h2>See progress instead of a blank wait.</h2>
+                </li>
+                <li class="step-copy" data-step-copy="2">
+                  <span class="step-number">Watch the work</span>
+                  <h2>One message that keeps telling you where it is.</h2>
                   <p>
-                    Symma updates the working message with the steps reported by your agent, so a
-                    long task still feels alive.
+                    Instead of a blank wait, the reply updates itself with whatever your agent is
+                    doing right now — reading a file, running a test. When the answer lands, the
+                    status line goes away.
                   </p>
-                </article>
-                <article class="step-copy" data-step-copy="3">
+                </li>
+                <li class="step-copy" data-step-copy="3">
                   <span class="step-number">Keep going</span>
                   <h2>The DM thread holds the conversation.</h2>
                   <p>
                     Ask another question in the same thread. Symma picks up the agent session when
-                    it can and restores the conversation when it cannot.
+                    it can and restores the conversation when it cannot. It keeps one turn moving at
+                    a time so the session never splits.
                   </p>
-                </article>
-                <article class="step-copy" data-step-copy="4">
+                </li>
+                <li class="step-copy" data-step-copy="4">
                   <span class="step-number">Review before sharing</span>
                   <h2>Send the conclusion, not the working notes.</h2>
                   <p>
                     Refine the answer in private. Nothing returns to the channel until you confirm
                     exactly what should be shared.
                   </p>
-                </article>
-              </div>
+                </li>
+              </ol>
             </div>
 
             <div class="story-visual-wrap">
               <div
                 class="slack-demo slack-demo-desktop"
                 role="img"
-                aria-label="A five-stage Symma conversation in Slack: one top-level private DM becomes the conversation root, and every later user and bot turn stays in its thread while the user sets scope, watches progress, follows up, and reviews the answer before sharing."
+                aria-label="A five-stage Symma conversation in Slack: a channel mention opens one top-level private DM, and every later user and bot turn stays in its thread while Symma names the project and access mode, reports progress, handles a follow-up, and waits for approval before sharing back."
               >
                 <div class="demo-chrome">
                   <span class="chrome-dot"></span>
@@ -169,7 +167,7 @@
                         <div class="thread-day">Today</div>
 
                         <article class="demo-message message-context message-root">
-                          <span class="demo-avatar symma-avatar" aria-hidden="true">s</span>
+                          <span class="demo-avatar symma-avatar" aria-hidden="true"></span>
                           <div class="message-body">
                             <div class="message-author">
                               <strong>symma</strong>
@@ -220,25 +218,22 @@
                           </article>
 
                           <article class="demo-message message-scope">
-                            <span class="demo-avatar symma-avatar" aria-hidden="true">s</span>
+                            <span class="demo-avatar symma-avatar" aria-hidden="true"></span>
                             <div class="message-body">
                               <div class="message-author">
                                 <strong>symma</strong>
                                 <span>10:15</span>
                                 <i>APP</i>
                               </div>
-                              <p>On it. Reading <b>checkout-error.png</b>.</p>
-                              <div class="scope-strip">
-                                <span><small>Project</small>payments-api</span>
-                                <span><small>Access</small>read and edit</span>
-                                <span><small>Model</small>Your choice</span>
-                                <span><small>Effort</small>high</span>
-                              </div>
+                              <p>
+                                On it, in <b>payments-api</b> — <b>read-only</b> mode. Reading
+                                <b>checkout-error.png</b>.
+                              </p>
                             </div>
                           </article>
 
                           <article class="demo-message message-working">
-                            <span class="demo-avatar symma-avatar" aria-hidden="true">s</span>
+                            <span class="demo-avatar symma-avatar" aria-hidden="true"></span>
                             <div class="message-body">
                               <div class="message-author">
                                 <strong>symma</strong>
@@ -247,18 +242,13 @@
                               </div>
                               <p class="working-line">
                                 <span class="working-mark" aria-hidden="true"></span>
-                                Still working
+                                Tracing where the session is replaced…
                               </p>
-                              <ol class="work-steps">
-                                <li class="is-done">Read the retry handler</li>
-                                <li class="is-done">Compared the screenshot with recent logs</li>
-                                <li class="is-current">Tracing where the session is replaced</li>
-                              </ol>
                             </div>
                           </article>
 
                           <article class="demo-message message-first-answer">
-                            <span class="demo-avatar symma-avatar" aria-hidden="true">s</span>
+                            <span class="demo-avatar symma-avatar" aria-hidden="true"></span>
                             <div class="message-body">
                               <div class="message-author">
                                 <strong>symma</strong>
@@ -269,6 +259,11 @@
                                 The retry creates a new checkout session but the next request still
                                 sends the old session ID. I found the handoff that needs to change.
                               </p>
+                              <div class="scope-strip">
+                                <span><small>Project</small>payments-api</span>
+                                <span><small>Access</small>read-only</span>
+                                <span><small>Model</small>When offered</span>
+                              </div>
                             </div>
                           </article>
 
@@ -286,7 +281,7 @@
                           </article>
 
                           <article class="demo-message message-resume">
-                            <span class="demo-avatar symma-avatar" aria-hidden="true">s</span>
+                            <span class="demo-avatar symma-avatar" aria-hidden="true"></span>
                             <div class="message-body">
                               <div class="message-author">
                                 <strong>symma</strong>
@@ -299,7 +294,7 @@
                           </article>
 
                           <article class="demo-message message-final">
-                            <span class="demo-avatar symma-avatar" aria-hidden="true">s</span>
+                            <span class="demo-avatar symma-avatar" aria-hidden="true"></span>
                             <div class="message-body">
                               <div class="message-author">
                                 <strong>symma</strong>
@@ -313,7 +308,7 @@
                               </p>
                               <div class="answer-actions">
                                 <span class="share-action">Share to thread</span>
-                                <span class="private-action">Keep private</span>
+                                <small>Stays here unless you share it.</small>
                               </div>
                             </div>
                           </article>
@@ -332,11 +327,11 @@
               <div
                 class="slack-demo slack-demo-mobile"
                 role="img"
-                aria-label="A mobile five-stage Symma conversation showing one top-level DM as the root and all later user and bot turns inside that DM's thread."
+                aria-label="A mobile five-stage Symma conversation showing a channel mention opening one top-level DM, with all later user and bot turns inside that DM's thread until the user shares the reviewed answer back."
               >
                 <div class="mobile-demo-header">
                   <span class="mobile-back">‹</span>
-                  <span class="mobile-symma-mark">s</span>
+                  <span class="mobile-symma-mark" aria-hidden="true"></span>
                   <span>
                     <strong>symma</strong>
                     <small>Direct message</small>
@@ -356,24 +351,27 @@
                   </div>
                 </div>
                 <div class="mobile-scene mobile-scene-scope">
-                  <span class="scene-label">DM root’s thread · controls</span>
-                  <strong>checkout-error.png</strong>
-                  <div class="mobile-control-grid">
-                    <span><small>Project</small>payments-api</span>
-                    <span><small>Access</small>read and edit</span>
-                    <span><small>Model</small>Your choice</span>
-                    <span><small>Effort</small>high</span>
-                  </div>
+                  <span class="scene-label">DM root’s thread · project confirmed</span>
+                  <strong>On it, in payments-api — read-only mode.</strong>
+                  <p>Reading checkout-error.png.</p>
                 </div>
                 <div class="mobile-scene mobile-scene-work">
                   <span class="scene-label scene-live"
                     ><i></i> DM root’s thread · agent working</span
                   >
-                  <strong>Tracing where the session is replaced</strong>
-                  <p>Read retry handler · compared screenshot · checking logs</p>
+                  <strong>Tracing where the session is replaced…</strong>
+                  <p>This one status line replaces itself as the work moves.</p>
                 </div>
                 <div class="mobile-scene mobile-scene-follow">
                   <span class="scene-label">DM root’s thread · same session</span>
+                  <div class="mobile-first-answer">
+                    <strong>Found the stale session handoff.</strong>
+                    <div class="mobile-control-grid">
+                      <span><small>Project</small>payments-api</span>
+                      <span><small>Access</small>read-only</span>
+                      <span><small>Model</small>When offered</span>
+                    </div>
+                  </div>
                   <div class="mobile-ask">
                     Check the fix against the test, then make the update shorter.
                   </div>
@@ -385,7 +383,7 @@
                   <p>The fix now carries the replacement session forward.</p>
                   <div class="mobile-actions">
                     <span>Share to thread</span>
-                    <span>Keep private</span>
+                    <small>Stays here unless you share it.</small>
                   </div>
                 </div>
               </div>
@@ -395,10 +393,10 @@
                   <button type="button" data-jump="0" aria-label="Go to Start privately">
                     <span><i></i></span>
                   </button>
-                  <button type="button" data-jump="1" aria-label="Go to Set the scope">
+                  <button type="button" data-jump="1" aria-label="Go to See the scope">
                     <span><i></i></span>
                   </button>
-                  <button type="button" data-jump="2" aria-label="Go to Watch the work move">
+                  <button type="button" data-jump="2" aria-label="Go to Watch the work">
                     <span><i></i></span>
                   </button>
                   <button type="button" data-jump="3" aria-label="Go to Keep going">
@@ -417,65 +415,8 @@
                   <path d="m3 6 5 5 5-5" />
                 </svg>
               </p>
-
-              <div class="calm-summary">
-                <span>private task</span>
-                <i aria-hidden="true">→</i>
-                <span>visible progress</span>
-                <i aria-hidden="true">→</i>
-                <span>follow-up</span>
-                <i aria-hidden="true">→</i>
-                <span>reviewed answer</span>
-              </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      <section id="experience" class="experience section shell" aria-labelledby="experience-title">
-        <div class="section-intro experience-heading">
-          <span class="section-kicker">A better handoff</span>
-          <h2 id="experience-title">Slack gets the answer. You keep the working session.</h2>
-          <p>
-            Collaboration gets noisy when every intermediate thought lands in the shared thread.
-            Symma gives the work a private place to become useful first.
-          </p>
-        </div>
-
-        <div class="experience-sequence">
-          <article>
-            <span class="sequence-number">01</span>
-            <div>
-              <h3>Work away from the channel</h3>
-              <p>
-                Bring in the conversation that matters, then investigate with your agent in a DM
-                thread that belongs to you.
-              </p>
-            </div>
-            <span class="sequence-state">private</span>
-          </article>
-          <article>
-            <span class="sequence-number">02</span>
-            <div>
-              <h3>Ask for another pass</h3>
-              <p>
-                Challenge the first answer, add a file, or ask for a shorter update without making
-                everyone else follow the draft.
-              </p>
-            </div>
-            <span class="sequence-state">in review</span>
-          </article>
-          <article>
-            <span class="sequence-number">03</span>
-            <div>
-              <h3>Publish with intent</h3>
-              <p>
-                Share the verified conclusion back to its source thread only when it says what you
-                need it to say.
-              </p>
-            </div>
-            <span class="sequence-state">your choice</span>
-          </article>
         </div>
       </section>
 
@@ -518,9 +459,10 @@
             <article>
               <span class="ledger-icon" aria-hidden="true">◎</span>
               <div>
-                <h3>Your model and effort</h3>
+                <h3>Your model</h3>
                 <p>
-                  When the agent offers choices, Symma shows exactly what the next turn will use.
+                  Symma offers the models your own agent advertises, and nothing else. Whatever you
+                  pick applies from your next message.
                 </p>
               </div>
               <span class="boundary-chip">capability-led</span>
@@ -534,8 +476,8 @@
           <span class="section-kicker">Current setup</span>
           <h2 id="connection-title">Connect the machine you already work on.</h2>
           <p>
-            Symma currently runs as an operator-installed Slack app for an internal workspace. Each
-            member pairs their own companion once.
+            A workspace admin connects Symma once. Each person pairs the computer where their agent
+            is already signed in.
           </p>
         </div>
 
@@ -544,14 +486,17 @@
             <span class="connection-number">1</span>
             <div>
               <strong>Ask Slack for a pairing code</strong>
-              <p>Run <code>/connect</code> in Symma’s messages tab.</p>
+              <p>Run <code>/connect</code> in any Slack channel where Symma is present.</p>
             </div>
           </li>
           <li>
             <span class="connection-number">2</span>
             <div>
               <strong>Pair your computer</strong>
-              <p>Run the one-time command where your coding agent is already signed in.</p>
+              <p>
+                Run the one-time command Slack gives you on the computer where your coding agent is
+                already signed in.
+              </p>
             </div>
           </li>
           <li>
@@ -563,8 +508,9 @@
           </li>
         </ol>
         <p class="scope-note">
-          Current scope: a custom Socket Mode app for known members of one internal Slack
-          workspace—not a public Marketplace installation.
+          <strong>Who can use this today:</strong> people whose workspace admin directly installs
+          Symma’s internal Socket Mode app, and who already run a coding agent on their own machine.
+          There is no public sign-up yet, and Symma is not in the Slack Marketplace.
         </p>
       </section>
 
@@ -583,7 +529,7 @@
           <div
             class="trust-route"
             role="img"
-            aria-label="A private Slack DM passes through the owner-scoped Symma relay to the invoking person's connected machine. Relayed conversation and attachments pass through Symma, while provider credentials and approved project files remain on the machine."
+            aria-label="A private Slack DM passes through the owner-scoped Symma relay to the invoking person's connected machine and its ACP-compatible agent, such as Codex, Claude, OpenCode, Cursor, Amp, goose, or pi. Relayed conversation and attachments pass through Symma, while provider credentials and approved project files remain on the machine."
           >
             <svg
               class="trust-lines"
@@ -595,9 +541,7 @@
               <path d="M550 110 C650 110 665 110 750 110" />
             </svg>
             <article class="route-node route-slack">
-              <span class="route-symbol slack-symbol" aria-hidden="true"
-                ><i></i><i></i><i></i><i></i
-              ></span>
+              <span class="route-symbol slack-symbol" aria-hidden="true"></span>
               <div>
                 <small>Slack</small>
                 <strong>Your private DM</strong>
@@ -605,7 +549,7 @@
               </div>
             </article>
             <article class="route-node route-symma">
-              <span class="route-symbol symma-symbol" aria-hidden="true">s</span>
+              <span class="route-symbol symma-symbol" aria-hidden="true"></span>
               <div>
                 <small>Symma</small>
                 <strong>Checks the owner</strong>
@@ -613,7 +557,30 @@
               </div>
             </article>
             <article class="route-node route-machine">
-              <span class="route-symbol machine-symbol" aria-hidden="true">›_</span>
+              <span class="route-symbol agent-logos" aria-hidden="true">
+                <i class="agent-logo" aria-hidden="true"
+                  ><span class="brand-icon codex-icon"></span
+                ></i>
+                <i class="agent-logo" aria-hidden="true"
+                  ><span class="brand-icon claude-icon"></span
+                ></i>
+                <i class="agent-logo" aria-hidden="true"
+                  ><span class="brand-icon opencode-icon"></span
+                ></i>
+                <i class="agent-logo" aria-hidden="true"
+                  ><span class="brand-icon cursor-icon"></span
+                ></i>
+                <i class="agent-logo" aria-hidden="true"
+                  ><span class="brand-icon amp-icon"></span
+                ></i>
+                <i class="agent-logo" aria-hidden="true"
+                  ><span class="brand-icon goose-icon"></span
+                ></i>
+                <i class="agent-logo" aria-hidden="true"
+                  ><span class="brand-icon pi-icon"></span
+                ></i>
+                <i class="agent-logo agent-logo-text agent-more" aria-hidden="true">+</i>
+              </span>
               <div>
                 <small>Your computer</small>
                 <strong>Your agent works here</strong>
@@ -625,20 +592,22 @@
 
           <ul class="trust-facts" aria-label="Trust model details">
             <li>
+              <strong>Work away from the channel</strong>
+              <span>Investigate and refine in a DM thread that belongs to you.</span>
+            </li>
+            <li>
               <strong>Owner-scoped</strong>
               <span>Your Slack identity cannot fall through to someone else’s machine.</span>
             </li>
             <li>
-              <strong>Outbound connection</strong>
-              <span>Your companion connects out; you do not open an inbound port.</span>
+              <strong>Your machine stays yours</strong>
+              <span
+                >Your companion connects out; your provider login and project remain local.</span
+              >
             </li>
             <li>
-              <strong>Honest relay</strong>
-              <span>Prompts, output, progress, and sent attachments are visible to the relay.</span>
-            </li>
-            <li>
-              <strong>Private by default</strong>
-              <span>A channel receives nothing until you confirm “Share to thread.”</span>
+              <strong>Publish with intent</strong>
+              <span>Share the verified conclusion back only when it says what you need.</span>
             </li>
           </ul>
         </div>
@@ -666,7 +635,7 @@
             >
               <code>@symma/protocol</code>
               <span>ACP sessions, controls, attachments, and signed relay messages</span>
-              <b>0.7.0</b>
+              <b>npm</b>
             </a>
             <a
               class="package-row"
@@ -676,7 +645,7 @@
             >
               <code>@symma/client</code>
               <span>Runs a prompt locally or through the owner-scoped gateway</span>
-              <b>0.5.0</b>
+              <b>npm</b>
             </a>
             <a
               class="package-row"
@@ -686,18 +655,28 @@
             >
               <code>symma</code>
               <span>Pairs the machine, finds agents, and enforces approved workspaces</span>
-              <b>0.1.3</b>
+              <b>npm</b>
             </a>
-            <div class="package-row">
+            <a
+              class="package-row"
+              href="https://github.com/pgup-ai/symma/tree/main/packages/gateway"
+              target="_blank"
+              rel="noreferrer"
+            >
               <code>@symma/gateway</code>
               <span>Owns tenancy, conversations, session routing, and journals</span>
-              <b>private</b>
-            </div>
-            <div class="package-row">
+              <b>source only</b>
+            </a>
+            <a
+              class="package-row"
+              href="https://github.com/pgup-ai/symma/tree/main/packages/slack"
+              target="_blank"
+              rel="noreferrer"
+            >
               <code>@symma/slack</code>
               <span>Owns pairing, DM turns, progress, controls, files, and share-back</span>
-              <b>private</b>
-            </div>
+              <b>source only</b>
+            </a>
           </div>
         </div>
       </section>
@@ -716,10 +695,8 @@
             target="_blank"
             rel="noreferrer"
           >
-            View on GitHub
-            <svg viewBox="0 0 16 16" aria-hidden="true">
-              <path d="M4 12 12 4M6 4h6v6" />
-            </svg>
+            GitHub
+            <span class="brand-icon github-icon" aria-hidden="true"></span>
           </a>
         </div>
       </section>
@@ -729,17 +706,31 @@
       <div class="shell footer-inner">
         <div class="footer-brand">
           <a class="wordmark" href="#top">
-            <span class="wordmark-mark" aria-hidden="true">
-              <span></span>
-              <span></span>
-            </span>
+            <span class="wordmark-mark" aria-hidden="true"></span>
             <span>symma</span>
           </a>
           <p><i>Symma</i> comes from the Greek word for alliance.</p>
         </div>
         <div class="footer-meta">
           <span>Open source, MIT</span>
-          <a href="https://github.com/pgup-ai/symma" target="_blank" rel="noreferrer">GitHub</a>
+          <div class="footer-links">
+            <a
+              href="https://github.com/pgup-ai/symma"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Symma on GitHub"
+            >
+              <span class="brand-icon github-icon" aria-hidden="true"></span>
+            </a>
+            <a
+              href="https://x.com/j1ngb0"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Jingbo on X"
+            >
+              <span class="brand-icon x-icon" aria-hidden="true"></span>
+            </a>
+          </div>
         </div>
       </div>
     </footer>

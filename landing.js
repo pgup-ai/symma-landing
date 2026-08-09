@@ -19,8 +19,8 @@ const state = {
 
 const stages = [
   { start: 0.07, end: 0.24, label: 'Start privately' },
-  { start: 0.24, end: 0.41, label: 'Set the scope' },
-  { start: 0.41, end: 0.58, label: 'Watch the work move' },
+  { start: 0.24, end: 0.41, label: 'See the scope' },
+  { start: 0.41, end: 0.58, label: 'Watch the work' },
   { start: 0.58, end: 0.76, label: 'Keep going' },
   { start: 0.76, end: 1, label: 'Review before sharing' },
 ];
