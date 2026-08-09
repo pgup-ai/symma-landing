@@ -8,7 +8,7 @@ belongs on.
 
 ## Folders
 
-```
+```text
 masters/                flat mark, ground baked in        ← the default choice
 masters-gradient/       gradient mark, ground baked in    ← 64 px and above
 masters-transparent/    no ground, for surfaces you control
@@ -28,19 +28,19 @@ and the app, where the mark needs to sit on your own surface colours.
 
 ## Colour
 
-| Where | Colour | Contrast |
-| --- | --- | --- |
-| Dark backgrounds (`#09090b`) | Violet `#9f8bea` | 6.97 : 1 |
-| Light backgrounds (white) | Violet Ink `#5b4d95` | 7.14 : 1 |
-| Mid surfaces | Violet Deep `#7161b6` | 5.14 : 1 on white |
+| Where                        | Colour                | Contrast          |
+| ---------------------------- | --------------------- | ----------------- |
+| Dark backgrounds (`#09090b`) | Violet `#9f8bea`      | 6.97 : 1          |
+| Light backgrounds (white)    | Violet Ink `#5b4d95`  | 7.14 : 1          |
+| Mid surfaces                 | Violet Deep `#7161b6` | 5.14 : 1 on white |
 
 `#9f8bea` measures 2.86 : 1 on white and `#c0b4ee` reaches 1.91 : 1 — both fail
 the 3 : 1 graphics minimum. Never use them on a light background.
 
-**Violet Ink `#5b4d95` is a new token.** `AGENTS.md` currently defines the accent
-family as three violets; this adds a fourth, for light surfaces only. It needs
-sign-off before it lands. Without it, use Violet Deep `#7161b6` on light
-backgrounds and drop the `onlight` files.
+**Violet Ink `#5b4d95` is not an approved site token.** The approved violet tokens
+live in `styles.css` under `:root`; `AGENTS.md` limits the site to that accent
+family. The supplied light-surface exports need sign-off before use. Until then,
+use Violet Deep `#7161b6` on light backgrounds and omit the `onlight` files.
 
 Note the naming: **Violet Ink** is `#5b4d95`, the light-mode brand violet. **Ink**
 alone is `#09090b`, the page background. The near-black monochrome file is

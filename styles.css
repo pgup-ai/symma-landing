@@ -997,7 +997,7 @@ button:focus-visible {
 
 .answer-actions small {
   color: var(--muted);
-  font-size: 9px;
+  font-size: 11px;
 }
 
 .demo-composer {
@@ -1996,7 +1996,7 @@ a.package-row:hover {
 
   .mobile-actions small {
     color: var(--muted);
-    font-size: 9px;
+    font-size: 11px;
   }
 
   .mobile-actions span:first-child {
@@ -2237,7 +2237,8 @@ a.package-row:hover {
   }
 
   .route-machine {
-    grid-template-columns: 145px 1fr;
+    grid-template-columns: 1fr;
+    gap: 12px;
   }
 
   .route-symbol {

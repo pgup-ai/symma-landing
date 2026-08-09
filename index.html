@@ -92,11 +92,12 @@
                   <p>
                     Symma names the project it opened and the permission level it is using, then
                     gets to work. Attach a screenshot or a file and it reads that too. You can
-                    change the permission level or the model for the next message.
+                    change the permission level for the next message. If your agent offers model
+                    choices, you can change that too.
                   </p>
                 </li>
                 <li class="step-copy" data-step-copy="2">
-                  <span class="step-number">Watch the work move</span>
+                  <span class="step-number">Watch the work</span>
                   <h2>One message that keeps telling you where it is.</h2>
                   <p>
                     Instead of a blank wait, the reply updates itself with whatever your agent is
@@ -261,7 +262,7 @@
                               <div class="scope-strip">
                                 <span><small>Project</small>payments-api</span>
                                 <span><small>Access</small>read-only</span>
-                                <span><small>Model</small>Your choice</span>
+                                <span><small>Model</small>When offered</span>
                               </div>
                             </div>
                           </article>
@@ -368,7 +369,7 @@
                     <div class="mobile-control-grid">
                       <span><small>Project</small>payments-api</span>
                       <span><small>Access</small>read-only</span>
-                      <span><small>Model</small>Your choice</span>
+                      <span><small>Model</small>When offered</span>
                     </div>
                   </div>
                   <div class="mobile-ask">
@@ -395,7 +396,7 @@
                   <button type="button" data-jump="1" aria-label="Go to See the scope">
                     <span><i></i></span>
                   </button>
-                  <button type="button" data-jump="2" aria-label="Go to Watch the work move">
+                  <button type="button" data-jump="2" aria-label="Go to Watch the work">
                     <span><i></i></span>
                   </button>
                   <button type="button" data-jump="3" aria-label="Go to Keep going">
@@ -493,8 +494,8 @@
             <div>
               <strong>Pair your computer</strong>
               <p>
-                Run <code>npm i -g symma &amp;&amp; symma pair ····-····-····-····</code> where your
-                coding agent is already signed in.
+                Run the one-time command Slack gives you on the computer where your coding agent is
+                already signed in.
               </p>
             </div>
           </li>
@@ -507,9 +508,9 @@
           </li>
         </ol>
         <p class="scope-note">
-          <strong>Who can use this today:</strong> people whose workspace admin installs Symma
-          directly, and who already run a coding agent on their own machine. There is no public
-          sign-up yet, and Symma is not in the Slack Marketplace.
+          <strong>Who can use this today:</strong> people whose workspace admin directly installs
+          Symma’s internal Socket Mode app, and who already run a coding agent on their own machine.
+          There is no public sign-up yet, and Symma is not in the Slack Marketplace.
         </p>
       </section>
 
@@ -528,7 +529,7 @@
           <div
             class="trust-route"
             role="img"
-            aria-label="A private Slack DM passes through the owner-scoped Symma relay to the invoking person's connected machine. Relayed conversation and attachments pass through Symma, while provider credentials and approved project files remain on the machine."
+            aria-label="A private Slack DM passes through the owner-scoped Symma relay to the invoking person's connected machine and its ACP-compatible agent, such as Codex, Claude, OpenCode, Cursor, goose, or pi. Relayed conversation and attachments pass through Symma, while provider credentials and approved project files remain on the machine."
           >
             <svg
               class="trust-lines"
@@ -556,11 +557,7 @@
               </div>
             </article>
             <article class="route-node route-machine">
-              <span
-                class="route-symbol agent-logos"
-                role="img"
-                aria-label="ACP-compatible agents including Codex, Claude, OpenCode, Cursor, goose, pi, and more"
-              >
+              <span class="route-symbol agent-logos" aria-hidden="true">
                 <i class="agent-logo agent-logo-text" aria-hidden="true">ACP</i>
                 <i class="agent-logo" aria-hidden="true"
                   ><span class="brand-icon codex-icon"></span
