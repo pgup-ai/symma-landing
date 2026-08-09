@@ -13,8 +13,8 @@ Write for a curious Slack user first and a protocol implementer second.
 
 The page should explain this sequence in ordinary language:
 
-1. Ask from an existing Slack conversation.
-2. Continue the task in a private DM.
+1. Ask from an existing Slack conversation or send Symma a top-level DM.
+2. Use that one top-level DM as the private root; every later turn stays in its thread.
 3. Symma finds the machine paired to that person.
 4. The person's existing agent works in an approved project.
 5. The person reviews the result and chooses whether to share it.
@@ -22,15 +22,21 @@ The page should explain this sequence in ordinary language:
 Keep these promises clear:
 
 - One shared Slack app can serve many people, but each person reaches only their own agent.
+- One top-level DM identifies the conversation; acknowledgements, progress, answers, and follow-up
+  questions all stay in that DM's thread.
 - Provider credentials, project files, and agent execution stay on the connected machine.
 - A Slack invocation is not permission to publish the answer. Work begins privately.
 - A user chooses the machines, agents, and project folders Slack may expose.
 - The hosted service relays the conversation and sees that relayed content; do not imply
   end-to-end secrecy that the architecture does not provide.
 
-The agent connection works today. Personal Slack pairing and the polished Slack experience are
-planned. Preserve that distinction anywhere setup or availability is discussed. Never publish an
-install command, product control, or status claim that does not exist in the product.
+The owner-scoped Slack path works today: pairing, private DM-thread conversations, session
+reattachment with transcript recovery, bounded text and image attachments, progress narration,
+workspace and access-mode controls, model-and-effort selection where the agent offers them, and
+explicit share-back. The current Slack app is an operator-installed internal Socket Mode app, not a
+public Marketplace product. Preserve that distinction anywhere setup or availability is discussed.
+Never publish an install command, product control, or status claim that does not exist in the
+product.
 
 ## Information order
 
@@ -39,9 +45,9 @@ Keep the page progressive:
 1. Outcome: use your own agent from Slack.
 2. Five-step human story.
 3. Personal ownership, credentials, and project boundaries.
-4. Planned connection flow.
+4. Current connection flow and operating scope.
 5. Trust boundaries.
-6. Current packages and roadmap for technical readers.
+6. Current packages and operating limits for technical readers.
 7. GitHub call to action.
 
 Do not lead with ACP, gateways, endpoints, signed envelopes, tenancy, or other implementation

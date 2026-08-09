@@ -1,7 +1,8 @@
 # Symma landing
 
-The public landing page for [Symma](https://github.com/pgup-ai/symma): one Slack bot that routes
-each person to their own local or cloud ACP agent.
+The public landing page for [Symma](https://github.com/pgup-ai/symma): work with the agent on your
+own machine from a thread rooted in one private Slack DM, then share only the answer you have
+reviewed.
 
 ## Local preview
 
